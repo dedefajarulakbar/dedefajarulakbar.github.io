@@ -8,12 +8,13 @@
 <meta name="description" content="Honest reviews of Amazon products for families, plus simple tech tutorials. We test everything so you don't waste money. By Dede Fajarul Akbar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   :root {
     --cream: #faf6f0; --cream2: #f3ebe0; --cream3: #ece0d0;
     --brown: #7a5230; --brown-lt: #a07855; --brown-dk: #3d2010;
     --text: #2e1f0f; --text-mid: #6b5040; --text-lt: #a08070;
-    --green: #4a7c4a; --white: #ffffff; --border: rgba(122,82,48,0.15);
+    --green: #4a7c4a; --red: #c0392b; --white: #ffffff; --border: rgba(122,82,48,0.15);
     --shadow: 0 2px 16px rgba(61,32,16,0.08); --radius: 12px; --radius-sm: 8px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -21,89 +22,97 @@
   body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
- .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
- .topbar { background: var(--brown-dk); color: var(--cream2); text-align: center; font-size: 12px; padding: 8px 16px; letter-spacing: 0.5px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .topbar { background: var(--brown-dk); color: var(--cream2); text-align: center; font-size: 12px; padding: 8px 16px; letter-spacing: 0.5px; }
   header { background: var(--white); border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
- .header-inner { display: flex; justify-content: space-between; align-items: center; }
- .logo { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--brown); font-weight: 600; }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--brown); font-weight: 600; }
+  .logo i { margin-right: 8px; color: var(--green); }
   nav ul { display: flex; gap: 32px; list-style: none; }
   nav a { font-size: 15px; font-weight: 500; color: var(--text-mid); transition: 0.2s; }
   nav a:hover, nav a.active { color: var(--brown); }
- .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(135deg, var(--cream) 0%, var(--cream2) 100%); }
- .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--brown-dk); margin-bottom: 16px; font-weight: 600; }
- .hero p { font-size: 18px; color: var(--text-mid); max-width: 650px; margin: 0 auto 32px; }
- .hero-badge { display: inline-block; background: var(--cream3); color: var(--brown); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; margin-bottom: 20px; }
- .section { padding: 80px 0; }
- .section-title { font-family: 'Playfair Display', serif; font-size: 36px; text-align: center; color: var(--brown-dk); margin-bottom: 16px; }
- .section-sub { text-align: center; color: var(--text-mid); max-width: 600px; margin: 0 auto 50px; }
- .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
- .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
- .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,32,16,0.12); }
- .card-content { padding: 28px; }
- .card-tag { display: inline-block; background: var(--cream2); color: var(--brown-lt); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; margin-bottom: 12px; }
- .card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--brown); margin-bottom: 12px; line-height: 1.3; }
- .card p { color: var(--text-mid); font-size: 15px; margin-bottom: 16px; }
- .link-list { background: var(--cream); padding: 16px; border-radius: 8px; margin: 20px 0; }
- .link-list a { display: block; color: var(--brown); font-weight: 500; margin-bottom: 8px; word-break: break-all; }
- .link-list a:hover { text-decoration: underline; }
- .link-list span { font-size: 13px; color: var(--text-lt); }
- .btn { display: inline-block; background: var(--green); color: var(--white); padding: 12px 28px; border-radius: 8px; font-weight: 500; transition: 0.2s; font-size: 15px; border: none; cursor: pointer; }
- .btn:hover { background: #3a6b3a; transform: translateY(-2px); }
- .btn-outline { background: transparent; color: var(--brown); border: 1.5px solid var(--brown); }
- .btn-outline:hover { background: var(--brown); color: var(--white); }
- .article-card { padding: 24px; }
- .article-card h4 { font-size: 18px; color: var(--brown-dk); margin-bottom: 8px; font-weight: 500; }
- .article-card p { font-size: 14px; color: var(--text-lt); margin-bottom: 12px; }
- .about { background: var(--white); border-radius: var(--radius); padding: 60px; box-shadow: var(--shadow); border: 1px solid var(--border); }
- .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
- .about h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--brown-dk); margin-bottom: 20px; }
- .about p { color: var(--text-mid); margin-bottom: 16px; }
+  .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(135deg, var(--cream) 0%, var(--cream2) 100%); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--brown-dk); margin-bottom: 16px; font-weight: 600; }
+  .hero p { font-size: 18px; color: var(--text-mid); max-width: 650px; margin: 0 auto 32px; }
+  .hero-badge { display: inline-block; background: var(--cream3); color: var(--brown); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; margin-bottom: 20px; }
+  .hero-badge i { margin-right: 6px; }
+  .section { padding: 80px 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 36px; text-align: center; color: var(--brown-dk); margin-bottom: 16px; }
+  .section-sub { text-align: center; color: var(--text-mid); max-width: 600px; margin: 0 auto 50px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
+  .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,32,16,0.12); }
+  .card-img { width: 100%; height: 260px; object-fit: contain; background: var(--cream2); padding: 20px; }
+  .card-content { padding: 28px; }
+  .card-tag { display: inline-block; background: var(--cream2); color: var(--brown-lt); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; margin-bottom: 12px; }
+  .card-tag i { margin-right: 4px; }
+  .card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--brown); margin-bottom: 12px; line-height: 1.3; }
+  .card p { color: var(--text-mid); font-size: 15px; margin-bottom: 16px; }
+  .story { background: var(--cream); padding: 16px; border-radius: 8px; margin: 20px 0; border-left: 3px solid var(--brown-lt); font-style: italic; font-size: 14px; color: var(--text-mid); }
+  .btn-group { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--green); color: var(--white); padding: 12px 20px; border-radius: 8px; font-weight: 500; transition: 0.2s; font-size: 15px; border: none; cursor: pointer; }
+  .btn:hover { background: #3a6b3a; transform: translateY(-2px); }
+  .btn-youtube { background: var(--red); }
+  .btn-youtube:hover { background: #a93226; }
+  .btn-pinterest { background: var(--brown); }
+  .btn-pinterest:hover { background: var(--brown-dk); }
+  .btn-outline { background: transparent; color: var(--brown); border: 1.5px solid var(--brown); }
+  .btn-outline:hover { background: var(--brown); color: var(--white); }
+  .pinterest-cta { background: var(--cream2); border-radius: var(--radius); padding: 40px; text-align: center; margin-top: 60px; border: 1px dashed var(--brown-lt); }
+  .pinterest-cta h3 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--brown-dk); margin-bottom: 12px; }
+  .pinterest-cta p { color: var(--text-mid); max-width: 600px; margin: 0 auto 20px; }
+  .article-card { padding: 24px; }
+  .article-card h4 { font-size: 18px; color: var(--brown-dk); margin-bottom: 8px; font-weight: 500; }
+  .article-card p { font-size: 14px; color: var(--text-lt); margin-bottom: 12px; }
+  .about { background: var(--white); border-radius: var(--radius); padding: 60px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
+  .about h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--brown-dk); margin-bottom: 20px; }
+  .about p { color: var(--text-mid); margin-bottom: 16px; }
   footer { background: var(--brown-dk); color: var(--cream2); padding: 70px 0 24px; margin-top: 80px; }
- .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
- .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 20px; }
- .footer-col a { display: block; color: var(--cream2); opacity: 0.8; margin-bottom: 10px; font-size: 14px; transition: 0.2s; }
- .footer-col a:hover { opacity: 1; transform: translateX(4px); }
- .footer-bottom { border-top: 1px solid rgba(250,246,240,0.2); padding-top: 24px; text-align: center; font-size: 13px; }
- .disclaimer { background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; margin-top: 20px; font-size: 12px; line-height: 1.6; text-align: left; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+  .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 20px; }
+  .footer-col a { display: block; color: var(--cream2); opacity: 0.8; margin-bottom: 10px; font-size: 14px; transition: 0.2s; }
+  .footer-col a:hover { opacity: 1; transform: translateX(4px); }
+  .footer-bottom { border-top: 1px solid rgba(250,246,240,0.2); padding-top: 24px; text-align: center; font-size: 13px; }
+  .disclaimer { background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; margin-top: 20px; font-size: 12px; line-height: 1.6; text-align: left; }
   code { background: var(--cream2); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-  /* Tutorial Page Style */
- .tutorial-page { display: none; padding: 60px 0; }
- .tutorial-page.active { display: block; }
- .tutorial-page h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brown-dk); margin-bottom: 20px; }
- .tutorial-page h3 { font-size: 20px; color: var(--brown); margin: 24px 0 12px; }
- .tutorial-page ol { padding-left: 20px; }
- .tutorial-page li { margin-bottom: 12px; color: var(--text-mid); }
- .back-btn { margin-bottom: 30px; }
+  .tutorial-page { display: none; padding: 60px 0; }
+  .tutorial-page.active { display: block; }
+  .tutorial-page h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brown-dk); margin-bottom: 20px; }
+  .tutorial-page h3 { font-size: 20px; color: var(--brown); margin: 24px 0 12px; }
+  .tutorial-page ol { padding-left: 20px; }
+  .tutorial-page li { margin-bottom: 12px; color: var(--text-mid); }
+  .back-btn { margin-bottom: 30px; }
   @media (max-width: 968px) {
     nav ul { gap: 20px; }
-   .hero h1 { font-size: 36px; }
-   .about-grid,.footer-grid { grid-template-columns: 1fr; }
-   .about { padding: 40px 24px; }
+    .hero h1 { font-size: 36px; }
+    .about-grid,.footer-grid { grid-template-columns: 1fr; }
+    .about { padding: 40px 24px; }
   }
   @media (max-width: 640px) {
     nav { display: none; }
-   .hero h1 { font-size: 30px; }
-   .section { padding: 60px 0; }
-   .grid-3 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .section { padding: 60px 0; }
+    .grid-3 { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="container">FTC Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you. <a href="#about" style="text-decoration: underline;">Learn more</a></div>
+  <div class="container"><i class="fa-solid fa-circle-info"></i> FTC Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you.</div>
 </div>
 
 <header>
   <div class="container header-inner">
-    <a href="#" class="logo" onclick="showHome()">Dede's Picks</a>
+    <a href="#" class="logo" onclick="showHome()"><i class="fa-solid fa-leaf"></i>Dede's Picks</a>
     <nav>
       <ul>
-        <li><a href="#home" class="active" onclick="showHome()">Home</a></li>
-        <li><a href="#reviews" onclick="showHome()">Reviews</a></li>
-        <li><a href="#guides" onclick="showHome()">Buying Guides</a></li>
-        <li><a href="#tutorials" onclick="showHome()">Tutorials</a></li>
-        <li><a href="#about" onclick="showHome()">About</a></li>
+        <li><a href="#home" class="active" onclick="showHome()"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#reviews" onclick="showHome()"><i class="fa-solid fa-star"></i> Reviews</a></li>
+        <li><a href="#guides" onclick="showHome()"><i class="fa-solid fa-book-open"></i> Guides</a></li>
+        <li><a href="#tutorials" onclick="showHome()"><i class="fa-solid fa-laptop-code"></i> Tutorials</a></li>
+        <li><a href="#about" onclick="showHome()"><i class="fa-solid fa-user"></i> About</a></li>
       </ul>
     </nav>
   </div>
@@ -112,84 +121,91 @@
 <main id="main-content">
 <section class="hero" id="home">
   <div class="container">
-    <div class="hero-badge">Updated May 2026 · Real Tests, No Fluff</div>
+    <div class="hero-badge"><i class="fa-solid fa-shield-heart"></i> Updated May 2026 · Real Tests, No Fluff</div>
     <h1>Honest Amazon Finds for Real Life</h1>
     <p>We buy, test, and review everyday products so you don't waste money. Plus simple tech tutorials that actually help. No hype, just what works.</p>
-    <a href="#reviews" class="btn">See This Month's Top Picks</a>
+    <a href="#reviews" class="btn"><i class="fa-solid fa-arrow-down"></i> See This Month's Top Picks</a>
   </div>
 </section>
 
 <section class="section" id="reviews">
   <div class="container">
     <h2 class="section-title">May 2026: Tested & Approved</h2>
-    <p class="section-sub">Every product here lives in my house. If it breaks, leaks, or disappoints, you’ll read about it first.</p>
+    <p class="section-sub">Every product here lives in my house. Read the story, see the proof, then decide.</p>
     <div class="grid-3">
       
       <div class="card" id="waterwipes">
+        <img src="https://m.media-amazon.com/images/I/71j-4iM7c2L._AC_SL1500_.jpg" alt="WaterWipes" class="card-img">
         <div class="card-content">
-          <span class="card-tag">Baby & Mom</span>
-          <h3>WaterWipes: 99.9% Water, 0% Regret?</h3>
-          <p>My son broke out in rashes from scented wipes. I switched to WaterWipes — literally water + fruit extract — and his skin cleared in 2 days. We use these for diaper changes, sticky hands, and even wiping his face after meals.</p>
-          <div class="link-list">
-            <span>WaterWipes short video on YouTube:</span>
-            <a href="https://youtube.com/shorts/_aeiz8Ii6oU" target="_blank">https://youtube.com/shorts/_aeiz8Ii6oU</a>
-            <span>Check this product:</span>
-            <a href="https://amzn.to/4tvKblt" target="_blank" rel="nofollow sponsored">Amazon Link</a>
-            <span>Visit my Pinterest to see more:</span>
-            <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank">https://id.pinterest.com/dedefajarulakbar/</a>
+          <span class="card-tag"><i class="fa-solid fa-baby"></i> Baby & Mom</span>
+          <h3>WaterWipes: When Every Wipe Was a Gamble</h3>
+          <div class="story">
+            "Jam 2 pagi. Anakku nangis kejer karena ruam popoknya perih. Udah 3 merk wipes kucoba, semua ada fragrance. Aku nekat order WaterWipes. Hari kedua, merah-merahnya kempes. Sekarang ini satu-satunya wipe yang berani kusentuh ke muka dia habis makan."
+          </div>
+          <p><strong>Kenapa ini lolos uji di rumahku:</strong> Cuma air + setetes ekstrak buah. Gak ada alkohol, gak ada sabun. Buat kulit bayi yang sensitif, ini penyelamat.</p>
+          <div class="btn-group">
+            <a href="https://youtube.com/shorts/_aeiz8Ii6oU" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
+            <a href="https://amzn.to/4tvKblt" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
           </div>
         </div>
       </div>
 
       <div class="card" id="scrubdaddy">
+        <img src="https://m.media-amazon.com/images/I/71r7c5-j9FL._AC_SL1500_.jpg" alt="Scrub Daddy" class="card-img">
         <div class="card-content">
-          <span class="card-tag">Home & Kitchen</span>
-          <h3>Scrub Daddy: The Sponge That Doesn't Stink</h3>
-          <p>I was done with smelly kitchen sponges. Scrub Daddy gets firm in cold water to scrub burnt pans, then soft in warm water for wine glasses. One 3-pack lasted me 4 months.</p>
-          <div class="link-list">
-            <span>Scrub Daddy short video on YouTube:</span>
-            <a href="https://youtube.com/shorts/zuygcqIDYOY" target="_blank">https://youtube.com/shorts/zuygcqIDYOY</a>
-            <span>Check this product:</span>
-            <a href="https://amzn.to/42xx8F4" target="_blank" rel="nofollow sponsored">Amazon Link</a>
-            <span>Visit my Pinterest to see more:</span>
-            <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank">https://id.pinterest.com/dedefajarulakbar/</a>
+          <span class="card-tag"><i class="fa-solid fa-kitchen-set"></i> Home & Kitchen</span>
+          <h3>Scrub Daddy: The End of Stinky Sponge Drama</h3>
+          <div class="story">
+            "Aku benci spons bau. Setiap 2 minggu buang. Scrub Daddy ini udah 4 bulan di wastafel, gak ada bau sama sekali. Air dingin dia keras buat gosok panci gosong, air panas dia lembek buat gelas wine. Warna-warni biar gak ketuker sama spons kamar mandi."
+          </div>
+          <p><strong>Kenapa ini lolos uji di rumahku:</strong> Gak ninggalin gores di teflon. Gak jadi sarang bakteri. Satu spons = 3 bulan hemat.</p>
+          <div class="btn-group">
+            <a href="https://youtube.com/shorts/zuygcqIDYOY" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
+            <a href="https://amzn.to/42xx8F4" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
           </div>
         </div>
       </div>
 
       <div class="card" id="huggies">
+        <img src="https://m.media-amazon.com/images/I/81+7tDq6yQL._AC_SL1500_.jpg" alt="Huggies Wipes" class="card-img">
         <div class="card-content">
-          <span class="card-tag">Baby & Mom</span>
-          <h3>Huggies Natural Care: 768 Wipes = 3 Months Peace</h3>
-          <p>This is my bulk buy. 768 wipes for around $25 means I’m not running to the store every week. They’re thick, plant-based, and pull out one at a time — no more 5-wipe clumps.</p>
-          <div class="link-list">
-            <span>Huggies short video on YouTube:</span>
-            <a href="https://youtube.com/shorts/SQMVilwW5PQ" target="_blank">https://youtube.com/shorts/SQMVilwW5PQ</a>
-            <span>Check this product:</span>
-            <a href="https://amzn.to/42siZsU" target="_blank" rel="nofollow sponsored">Amazon Link</a>
-            <span>Visit my Pinterest to see more:</span>
-            <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank">https://id.pinterest.com/dedefajarulakbar/</a>
+          <span class="card-tag"><i class="fa-solid fa-baby"></i> Baby & Mom</span>
+          <h3>Huggies Natural Care: My Bulk-Buy Sanity Saver</h3>
+          <div class="story">
+            "Punya bayi = lari ke Indomaret tiap minggu beli wipes. Capek. Aku beli Huggies box 768 biji ini. $25 buat 3 bulan. Tebel, keluarnya satu-satu, gak ada drama 5 lembar nempel. Pantat bayi aman, dompetku juga aman."
+          </div>
+          <p><strong>Kenapa ini lolos uji di rumahku:</strong> Best value per lembar. Plant-based. Gak bikin iritasi dari newborn sampe sekarang.</p>
+          <div class="btn-group">
+            <a href="https://youtube.com/shorts/SQMVilwW5PQ" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
+            <a href="https://amzn.to/42siZsU" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
           </div>
         </div>
       </div>
 
       <div class="card" id="alcoholpads">
+        <img src="https://m.media-amazon.com/images/I/71k3t9q8YEL._AC_SL1500_.jpg" alt="Alcohol Pads" class="card-img">
         <div class="card-content">
-          <span class="card-tag">Health & First Aid</span>
-          <h3>Med Pride Alcohol Pads: 200 Sterile Wipes Under $7</h3>
-          <p>I keep 5 in my car, 10 in my diaper bag, rest in our medicine cabinet. 70% isopropyl alcohol, individually sealed so they don’t dry out.</p>
-          <div class="link-list">
-            <span>Alcohol Pads short video on YouTube:</span>
-            <a href="https://youtube.com/shorts/kjAfW_rz8XA" target="_blank">https://youtube.com/shorts/kjAfW_rz8XA</a>
-            <span>Check this product:</span>
-            <a href="https://amzn.to/4txB0B4" target="_blank" rel="nofollow sponsored">Amazon Link</a>
-            <span>Visit my Pinterest to see more:</span>
-            <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank">https://id.pinterest.com/dedefajarulakbar/</a>
+          <span class="card-tag"><i class="fa-solid fa-briefcase-medical"></i> Health & First Aid</span>
+          <h3>Alcohol Pads: The 3-Cent Lifesaver</h3>
+          <div class="story">
+            "Anak jatoh, lutut lecet. Gak ada air ngalir. Aku sobek 1 alcohol pad dari tas, bersihin luka, tutup plester. Beres. Ada 200 biji di box ini. Kusebar di mobil, tas popok, kotak P3K. 3 sen per biji, tapi ketenangannya gak ternilai."
+          </div>
+          <p><strong>Kenapa ini lolos uji di rumahku:</strong> 70% alkohol, steril, satuan jadi gak kering. Buat bersihin HP, termometer, luka kecil. Wajib punya.</p>
+          <div class="btn-group">
+            <a href="https://youtube.com/shorts/kjAfW_rz8XA" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
+            <a href="https://amzn.to/4txB0B4" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
           </div>
         </div>
       </div>
 
     </div>
+
+    <div class="pinterest-cta">
+      <h3><i class="fa-brands fa-pinterest"></i> Suka review jujur kayak gini?</h3>
+      <p>Aku test produk baru tiap bulan buat bantu produktivitas & hemat duit rumah tangga. Dari alat dapur sampe barang bayi. Kalo kamu mau tau produk apalagi yang udah lolos uji di rumahku, semua rangkumannya ada di Pinterest. Gak ada drama, cuma yang beneran work.</p>
+      <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank" class="btn btn-pinterest"><i class="fa-brands fa-pinterest"></i> Visit My Pinterest Boards</a>
+    </div>
+
   </div>
 </section>
 
@@ -201,17 +217,17 @@
       <div class="card article-card">
         <h4>WaterWipes vs. Huggies: Which Wipe Wins for Sensitive Skin?</h4>
         <p>We tested absorption, thickness, ingredients, and price per wipe over 30 days. Here's the honest breakdown...</p>
-        <button class="btn-outline btn" onclick="alert('Guide coming soon! Bookmark this page.')">Read Guide</button>
+        <button class="btn-outline btn" onclick="alert('Full guide coming next week! Follow my Pinterest to get notified.')"><i class="fa-solid fa-book-open"></i> Read Guide</button>
       </div>
       <div class="card article-card">
         <h4>5 Baby Essentials Under $25 on Amazon Right Now</h4>
         <p>Skip the overpriced "baby brand" markup. These hospital-recommended items cost less and work better...</p>
-        <button class="btn-outline btn" onclick="alert('Guide coming soon! Bookmark this page.')">Read Guide</button>
+        <button class="btn-outline btn" onclick="alert('Full guide coming next week! Follow my Pinterest to get notified.')"><i class="fa-solid fa-book-open"></i> Read Guide</button>
       </div>
       <div class="card article-card">
         <h4>Scrub Daddy vs. Scrub Mommy: Do You Need Both?</h4>
         <p>Texture, durability, and smell test after 60 days of dish duty. The results surprised us...</p>
-        <button class="btn-outline btn" onclick="alert('Guide coming soon! Bookmark this page.')">Read Guide</button>
+        <button class="btn-outline btn" onclick="alert('Full guide coming next week! Follow my Pinterest to get notified.')"><i class="fa-solid fa-book-open"></i> Read Guide</button>
       </div>
     </div>
   </div>
@@ -224,18 +240,18 @@
     <div class="grid-3">
       <div class="card article-card">
         <h4>How to Check Internet Speed: Ping Google in 10 Seconds</h4>
-        <p>1. Press <code>Win + R</code>, type <code>cmd</code>, hit Enter.<br>2. Type <code>ping google.com -t</code> and press Enter.<br>3. Look for "time=" — under 50ms is great, over 150ms means laggy.</p>
-        <button class="btn-outline btn" onclick="openTutorial('ping')">Full Steps</button>
+        <p>1. Press <code>Win + R</code>, type <code>cmd</code>, hit Enter.<br>2. Type <code>ping google.com -t</code> and press Enter.<br>3. Look for "time=" — under 50ms is great.</p>
+        <button class="btn-outline btn" onclick="openTutorial('ping')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</button>
       </div>
       <div class="card article-card">
         <h4>Is Your Laptop Overheating? Check Temperature Now</h4>
-        <p>Method 1: Open Task Manager <code>Ctrl + Shift + Esc</code> → Performance tab.<br>Method 2: Download free tool HWInfo or Speccy for exact CPU/GPU temps. Under 80°C is safe.</p>
-        <button class="btn-outline btn" onclick="openTutorial('temp')">Full Steps</button>
+        <p>Method 1: Open Task Manager <code>Ctrl + Shift + Esc</code> → Performance tab.<br>Method 2: Download free tool HWInfo for exact CPU/GPU temps. Under 80°C is safe.</p>
+        <button class="btn-outline btn" onclick="openTutorial('temp')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</button>
       </div>
       <div class="card article-card">
         <h4>Find What’s Eating Your Storage in 1 Minute</h4>
         <p>Windows: Settings → System → Storage → See what’s taking space.<br>Pro tip: "Temporary files" can free up 10GB+ instantly.</p>
-        <button class="btn-outline btn" onclick="openTutorial('storage')">Full Steps</button>
+        <button class="btn-outline btn" onclick="openTutorial('storage')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</button>
       </div>
     </div>
   </div>
@@ -253,7 +269,7 @@
           <p>I'm Dede. In 2024, I wasted over $300 on Amazon products with 5-star reviews that were... terrible. Inflatable pool that popped in 2 hours. "Leak-proof" bottles that soaked my bag.</p>
           <p>I realized most reviews are fake or paid. So I started buying and testing products myself. If it survives my toddler, my kitchen, and my daily life, it gets featured here.</p>
           <p><strong>My promise:</strong> Every product on this site is in my home right now. I’ll tell you what I love, what broke, and what I wouldn’t buy again. My goal is simple — help you save money and buy things that actually work.</p>
-          <p>Questions? <a href="mailto:hello@dedefajarulakbar.github.io" style="color: var(--brown); text-decoration: underline;">Email me</a>. I read every message.</p>
+          <p>Questions? <a href="mailto:hello@dedefajarulakbar.github.io" style="color: var(--brown); text-decoration: underline;"><i class="fa-solid fa-envelope"></i> Email me</a>. I read every message.</p>
         </div>
       </div>
     </div>
@@ -261,13 +277,13 @@
 </section>
 </main>
 
-<!-- Tutorial Pages - Hidden, Opens in New Tab -->
+<!-- Tutorial Pages -->
 <section class="tutorial-page" id="tutorial-ping">
   <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()">← Close Tab</button>
+    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
     <h1>How to Check Internet Speed: Ping Google</h1>
     <p>Ping test shows how fast your computer talks to Google's server. Lower = better for gaming, Zoom, Netflix.</p>
-    <h3>Step-by-Step Windows:</h3>
+    <h3><i class="fa-brands fa-windows"></i> Step-by-Step Windows:</h3>
     <ol>
       <li>Press <code>Windows + R</code> on your keyboard. A "Run" box appears.</li>
       <li>Type <code>cmd</code> and press Enter. Black window called "Command Prompt" opens.</li>
@@ -275,35 +291,35 @@
       <li>Look at "time=XXms" on each line. This is your ping.</li>
       <li>Press <code>Ctrl + C</code> to stop the test.</li>
     </ol>
-    <h3>How to Read Results:</h3>
+    <h3><i class="fa-solid fa-gauge-high"></i> How to Read Results:</h3>
     <p><strong>0-50ms:</strong> Excellent. Perfect for gaming & video calls.<br>
     <strong>50-100ms:</strong> Good. Normal browsing is fine.<br>
     <strong>100-150ms:</strong> Okay. Might lag in games.<br>
     <strong>150ms+:</strong> Slow. Call your internet provider.</p>
-    <h3>Mac Users:</h3>
+    <h3><i class="fa-brands fa-apple"></i> Mac Users:</h3>
     <p>Open "Terminal" → type <code>ping google.com</code> → Enter. Same results.</p>
   </div>
 </section>
 
 <section class="tutorial-page" id="tutorial-temp">
   <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()">← Close Tab</button>
+    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
     <h1>Is Your Laptop Overheating? Check Temperature</h1>
     <p>Laptops slow down or shut off when too hot. Check your CPU/GPU temp in 30 seconds.</p>
-    <h3>Method 1: Task Manager - Quick Check</h3>
+    <h3><i class="fa-solid fa-bolt"></i> Method 1: Task Manager - Quick Check</h3>
     <ol>
       <li>Press <code>Ctrl + Shift + Esc</code> to open Task Manager.</li>
       <li>Click "Performance" tab on the left.</li>
       <li>Click "CPU" or "GPU". Look for temperature. If not shown, use Method 2.</li>
     </ol>
-    <h3>Method 2: HWInfo - Exact Temperature</h3>
+    <h3><i class="fa-solid fa-download"></i> Method 2: HWInfo - Exact Temperature</h3>
     <ol>
       <li>Google "HWInfo download" → Download free version from hwinfo.com</li>
       <li>Install → Run HWInfo → Click "Sensors-only" → Run.</li>
       <li>Scroll to "CPU" section. Look for "CPU Package" temp.</li>
       <li>Scroll to "GPU" section for graphics card temp.</li>
     </ol>
-    <h3>Safe Temperatures:</h3>
+    <h3><i class="fa-solid fa-temperature-half"></i> Safe Temperatures:</h3>
     <p><strong>Under 60°C:</strong> Cool. Perfect.<br>
     <strong>60-80°C:</strong> Warm. Normal under load/gaming.<br>
     <strong>80-90°C:</strong> Hot. Clean fans, use cooling pad.<br>
@@ -313,10 +329,10 @@
 
 <section class="tutorial-page" id="tutorial-storage">
   <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()">← Close Tab</button>
+    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
     <h1>Find What’s Eating Your Storage in 1 Minute</h1>
     <p>Hard drive full? Find the biggest folders and delete junk fast.</p>
-    <h3>Windows 11/10 Steps:</h3>
+    <h3><i class="fa-brands fa-windows"></i> Windows 11/10 Steps:</h3>
     <ol>
       <li>Click Start → Settings ⚙️</li>
       <li>Click "System" → "Storage"</li>
@@ -325,9 +341,9 @@
       <li>Click "Temporary files" → Check all boxes → "Remove files". This alone frees 5-20GB.</li>
       <li>Go back → Click "Other" to see huge folders. Delete what you don't need.</li>
     </ol>
-    <h3>Pro Tip: TreeSize Free</h3>
+    <h3><i class="fa-solid fa-star"></i> Pro Tip: TreeSize Free</h3>
     <p>Download "TreeSize Free" from jam-software.com. It shows a map of your entire hard drive. Biggest folders = biggest boxes. Delete old downloads, videos, games you don't play.</p>
-    <h3>Mac Users:</h3>
+    <h3><i class="fa-brands fa-apple"></i> Mac Users:</h3>
     <p>Apple Menu → About This Mac → Storage → Manage → See recommendations.</p>
   </div>
 </section>
@@ -336,70 +352,17 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>Dede's Picks</h4>
+        <h4><i class="fa-solid fa-leaf"></i> Dede's Picks</h4>
         <p style="opacity:0.8; font-size:14px; line-height:1.6;">Honest reviews and tutorials for everyday families. Based in Indonesia, testing products for readers worldwide since 2025.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href="#reviews" onclick="showHome()">Latest Reviews</a>
-        <a href="#guides" onclick="showHome()">Buying Guides</a>
-        <a href="#tutorials" onclick="showHome()">Tech Tutorials</a>
-        <a href="#about" onclick="showHome()">About Me</a>
+        <a href="#reviews" onclick="showHome()"><i class="fa-solid fa-star"></i> Latest Reviews</a>
+        <a href="#guides" onclick="showHome()"><i class="fa-solid fa-book-open"></i> Buying Guides</a>
+        <a href="#tutorials" onclick="showHome()"><i class="fa-solid fa-laptop-code"></i> Tech Tutorials</a>
+        <a href="#about" onclick="showHome()"><i class="fa-solid fa-user"></i> About Me</a>
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#" onclick="alert('Coming soon!')">Privacy Policy</a>
-        <a href="#" onclick="alert('Coming soon!')">Disclaimer</a>
-        <a href="#" onclick="alert('Coming soon!')">Terms of Use</a>
-        <a href="mailto:hello@dedefajarulakbar.github.io">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank">Pinterest</a>
-        <a href="#" target="_blank">YouTube</a>
-        <a href="#" target="_blank">Instagram</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Dede's Picks · Made with care in Meulaboh, Aceh</p>
-      <div class="disclaimer">
-        <strong>Amazon Affiliate Disclosure:</strong> Dede's Picks is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate I earn from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon at the time of purchase will apply. This content is not provided or endorsed by Amazon. We only recommend products we’ve personally tested and use in our own home.
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-function showHome() {
-  document.getElementById('main-content').style.display = 'block';
-  document.querySelectorAll('.tutorial-page').forEach(el => el.classList.remove('active'));
-  window.scrollTo(0, 0);
-}
-
-function openTutorial(type) {
-  const url = window.location.href.split('#')[0];
-  const newWindow = window.open('', '_blank');
-  let content = document.getElementById('tutorial-' + type).innerHTML;
-  let fullHtml = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial - Dede's Picks</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>${document.querySelector('style').innerHTML}</style></head><body>
-    <div class="topbar"><div class="container">FTC Disclosure: This site contains affiliate links.</div></div>
-    <section class="tutorial-page active">${content}</section>
-    </body></html>`;
-  newWindow.document.write(fullHtml);
-  newWindow.document.close();
-}
-
-// Handle direct tutorial links
-window.addEventListener('load', () => {
-  const hash = window.location.hash;
-  if(hash.startsWith('#tutorial-')) {
-    document.getElementById('main-content').style.display = 'none';
-    document.querySelector(hash).classList.add('active');
-  }
-});
-</script>
-
-</body>
-</html>
+        <a href="#" onclick="alert('Coming soon!')"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+        <a href="#" onclick="
