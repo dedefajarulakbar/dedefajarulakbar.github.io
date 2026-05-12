@@ -1,4 +1,58 @@
-
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Laptop Overheating Check - Dede's Picks</title>
-<link href="https
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--cream:#faf6f0;--cream2:#f3ebe0;--brown:#7a5230;--brown-dk:#3d2010;--text:#2e1f0f;--text-mid:#6b5040;--border:rgba(122,82,48,0.15);--radius:12px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;margin:0}
+.container{max-width:800px;margin:0 auto;padding:40px 24px}
+h1{font-family:'Playfair Display',serif;font-size:36px;color:var(--brown-dk);margin-bottom:20px}
+h3{font-size:20px;color:var(--brown);margin:24px 0 12px}
+ol{padding-left:20px}li{margin-bottom:12px;color:var(--text-mid)}
+code{background:var(--cream2);padding:2px 6px;border-radius:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--brown);border:1.5px solid var(--brown);padding:12px 20px;border-radius:8px;font-weight:500;text-decoration:none;margin-bottom:30px}
+.btn:hover{background:var(--brown);color:#fff}
+.warning{background:#fff3cd;border-left:4px solid #ffc107;padding:16px;border-radius:8px;margin:20px 0;color:#664d03}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="https://dedefajarulakbar.github.io/" class="btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+<h1><i class="fa-solid fa-temperature-half"></i> Is Your Laptop Overheating? Check Temperature Now</h1>
+<p>Laptops slow down or shut off when too hot. Dust, old thermal paste, or blocking vents are common causes. Check your CPU/GPU temp in 30 seconds.</p>
+
+<h3><i class="fa-solid fa-bolt"></i> Method 1: Task Manager - Quick Check</h3>
+<ol>
+<li>Press <code>Ctrl + Shift + Esc</code> to open Task Manager.</li>
+<li>Click "Performance" tab on the left sidebar.</li>
+<li>Click "CPU" or "GPU". Look for temperature at the bottom. If not shown, use Method 2.</li>
+</ol>
+
+<h3><i class="fa-solid fa-download"></i> Method 2: HWInfo - Exact Temperature</h3>
+<ol>
+<li>Google "HWInfo download" → Download free version from hwinfo.com</li>
+<li>Install → Run HWInfo → Select "Sensors-only" → Click Run.</li>
+<li>Scroll to "CPU [#0]" section. Look for "CPU Package" or "Core Max" temp.</li>
+<li>Scroll to "GPU [#0]" section for your graphics card temp.</li>
+<li>Leave it running while gaming/working to see max temps.</li>
+</ol>
+
+<h3><i class="fa-solid fa-triangle-exclamation"></i> Safe Temperatures Guide:</h3>
+<p><strong>Under 60°C:</strong> Cool. Perfect. Idle temps.<br>
+<strong>60-80°C:</strong> Warm. Normal when gaming, video editing, or heavy browsing.<br>
+<strong>80-90°C:</strong> Hot. Clean your laptop fans, use a cooling pad, close unused apps.<br>
+<strong>90°C+:</strong> Danger Zone. Your laptop may throttle or shut down. Clean dust ASAP, repaste CPU if old.</p>
+
+<div class="warning">
+<strong><i class="fa-solid fa-lightbulb"></i> Pro Tip:</strong> Put your laptop on a hard flat surface. Beds and blankets block vents and make temps jump 20°C+.
+</div>
+
+<h3><i class="fa-brands fa-apple"></i> Mac Users:</h3>
+<p>Download "Macs Fan Control" or "iStat Menus". Apple hides temps by default. Same safe ranges apply.</p>
+</div>
+</body>
+</html>
