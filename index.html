@@ -68,6 +68,7 @@
   .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
   .about h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--brown-dk); margin-bottom: 20px; }
   .about p { color: var(--text-mid); margin-bottom: 16px; }
+  .about-icon { font-size: 120px; color: var(--cream3); text-align: center; }
   footer { background: var(--brown-dk); color: var(--cream2); padding: 70px 0 24px; margin-top: 80px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
   .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 20px; }
@@ -76,18 +77,22 @@
   .footer-bottom { border-top: 1px solid rgba(250,246,240,0.2); padding-top: 24px; text-align: center; font-size: 13px; }
   .disclaimer { background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; margin-top: 20px; font-size: 12px; line-height: 1.6; text-align: left; }
   code { background: var(--cream2); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-  .tutorial-page { display: none; padding: 60px 0; }
-  .tutorial-page.active { display: block; }
-  .tutorial-page h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brown-dk); margin-bottom: 20px; }
-  .tutorial-page h3 { font-size: 20px; color: var(--brown); margin: 24px 0 12px; }
-  .tutorial-page ol { padding-left: 20px; }
-  .tutorial-page li { margin-bottom: 12px; color: var(--text-mid); }
+  .tutorial-page, .guide-page { display: none; padding: 60px 0; }
+  .tutorial-page.active, .guide-page.active { display: block; }
+  .tutorial-page h1, .guide-page h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brown-dk); margin-bottom: 20px; }
+  .tutorial-page h3, .guide-page h3 { font-size: 20px; color: var(--brown); margin: 24px 0 12px; }
+  .tutorial-page ol, .guide-page ol, .guide-page ul { padding-left: 20px; }
+  .tutorial-page li, .guide-page li { margin-bottom: 12px; color: var(--text-mid); }
   .back-btn { margin-bottom: 30px; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
+  .comparison-table th { background: var(--cream2); color: var(--brown-dk); }
   @media (max-width: 968px) {
     nav ul { gap: 20px; }
     .hero h1 { font-size: 36px; }
     .about-grid,.footer-grid { grid-template-columns: 1fr; }
     .about { padding: 40px 24px; }
+    .about-icon { font-size: 80px; }
   }
   @media (max-width: 640px) {
     nav { display: none; }
@@ -135,14 +140,14 @@
     <div class="grid-3">
       
       <div class="card" id="waterwipes">
-        <img src="https://m.media-amazon.com/images/I/71j-4iM7c2L._AC_SL1500_.jpg" alt="WaterWipes" class="card-img">
+        <img src="https://i.imgur.com/8Q1Z5yT.jpg" alt="WaterWipes Baby Wipes" class="card-img">
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-baby"></i> Baby & Mom</span>
           <h3>WaterWipes: When Every Wipe Was a Gamble</h3>
           <div class="story">
-            "Jam 2 pagi. Anakku nangis kejer karena ruam popoknya perih. Udah 3 merk wipes kucoba, semua ada fragrance. Aku nekat order WaterWipes. Hari kedua, merah-merahnya kempes. Sekarang ini satu-satunya wipe yang berani kusentuh ke muka dia habis makan."
+            "2 AM. My son was crying because his diaper rash was burning. I'd tried 3 brands of wipes, all with fragrance. I ordered WaterWipes out of desperation. Day two, the redness was gone. Now this is the only wipe I trust on his face after meals."
           </div>
-          <p><strong>Kenapa ini lolos uji di rumahku:</strong> Cuma air + setetes ekstrak buah. Gak ada alkohol, gak ada sabun. Buat kulit bayi yang sensitif, ini penyelamat.</p>
+          <p><strong>Why it passed my home test:</strong> Just water + a drop of fruit extract. No alcohol, no soap. For sensitive baby skin, this is a lifesaver.</p>
           <div class="btn-group">
             <a href="https://youtube.com/shorts/_aeiz8Ii6oU" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
             <a href="https://amzn.to/4tvKblt" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
@@ -151,14 +156,14 @@
       </div>
 
       <div class="card" id="scrubdaddy">
-        <img src="https://m.media-amazon.com/images/I/71r7c5-j9FL._AC_SL1500_.jpg" alt="Scrub Daddy" class="card-img">
+        <img src="https://i.imgur.com/k3L9vXp.jpg" alt="Scrub Daddy Sponge" class="card-img">
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-kitchen-set"></i> Home & Kitchen</span>
           <h3>Scrub Daddy: The End of Stinky Sponge Drama</h3>
           <div class="story">
-            "Aku benci spons bau. Setiap 2 minggu buang. Scrub Daddy ini udah 4 bulan di wastafel, gak ada bau sama sekali. Air dingin dia keras buat gosok panci gosong, air panas dia lembek buat gelas wine. Warna-warni biar gak ketuker sama spons kamar mandi."
+            "I hated smelly sponges. Tossed one every 2 weeks. This Scrub Daddy has been in my sink for 4 months, zero smell. Cold water makes it firm for burnt pans, warm water makes it soft for wine glasses. The colors keep bathroom sponges separate."
           </div>
-          <p><strong>Kenapa ini lolos uji di rumahku:</strong> Gak ninggalin gores di teflon. Gak jadi sarang bakteri. Satu spons = 3 bulan hemat.</p>
+          <p><strong>Why it passed my home test:</strong> No scratches on non-stick pans. Never becomes a bacteria hotel. One sponge = 3 months of savings.</p>
           <div class="btn-group">
             <a href="https://youtube.com/shorts/zuygcqIDYOY" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
             <a href="https://amzn.to/42xx8F4" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
@@ -167,14 +172,14 @@
       </div>
 
       <div class="card" id="huggies">
-        <img src="https://m.media-amazon.com/images/I/81+7tDq6yQL._AC_SL1500_.jpg" alt="Huggies Wipes" class="card-img">
+        <img src="https://i.imgur.com/VyJqP7m.jpg" alt="Huggies Natural Care Wipes" class="card-img">
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-baby"></i> Baby & Mom</span>
           <h3>Huggies Natural Care: My Bulk-Buy Sanity Saver</h3>
           <div class="story">
-            "Punya bayi = lari ke Indomaret tiap minggu beli wipes. Capek. Aku beli Huggies box 768 biji ini. $25 buat 3 bulan. Tebel, keluarnya satu-satu, gak ada drama 5 lembar nempel. Pantat bayi aman, dompetku juga aman."
+            "Having a baby = running to the store every week for wipes. Exhausting. I bought this 768-count box of Huggies. $25 for 3 months. They're thick, pull out one at a time, no 5-sheet clumps. Baby's butt is safe, my wallet is safe."
           </div>
-          <p><strong>Kenapa ini lolos uji di rumahku:</strong> Best value per lembar. Plant-based. Gak bikin iritasi dari newborn sampe sekarang.</p>
+          <p><strong>Why it passed my home test:</strong> Best value per wipe. Plant-based. No irritation from newborn until now.</p>
           <div class="btn-group">
             <a href="https://youtube.com/shorts/SQMVilwW5PQ" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
             <a href="https://amzn.to/42siZsU" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
@@ -183,14 +188,14 @@
       </div>
 
       <div class="card" id="alcoholpads">
-        <img src="https://m.media-amazon.com/images/I/71k3t9q8YEL._AC_SL1500_.jpg" alt="Alcohol Pads" class="card-img">
+        <img src="https://i.imgur.com/9cX2wQr.jpg" alt="Med Pride Alcohol Pads" class="card-img">
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-briefcase-medical"></i> Health & First Aid</span>
           <h3>Alcohol Pads: The 3-Cent Lifesaver</h3>
           <div class="story">
-            "Anak jatoh, lutut lecet. Gak ada air ngalir. Aku sobek 1 alcohol pad dari tas, bersihin luka, tutup plester. Beres. Ada 200 biji di box ini. Kusebar di mobil, tas popok, kotak P3K. 3 sen per biji, tapi ketenangannya gak ternilai."
+            "Kid fell, scraped knee. No running water. I tore open one alcohol pad from my bag, cleaned the wound, put on a bandage. Done. There are 200 in this box. I keep them in the car, diaper bag, first aid kit. 3 cents each, but the peace of mind is priceless."
           </div>
-          <p><strong>Kenapa ini lolos uji di rumahku:</strong> 70% alkohol, steril, satuan jadi gak kering. Buat bersihin HP, termometer, luka kecil. Wajib punya.</p>
+          <p><strong>Why it passed my home test:</strong> 70% alcohol, sterile, individually sealed so they don't dry out. For phones, thermometers, small cuts. A must-have.</p>
           <div class="btn-group">
             <a href="https://youtube.com/shorts/kjAfW_rz8XA" target="_blank" class="btn btn-youtube"><i class="fa-brands fa-youtube"></i> Watch 8s Short</a>
             <a href="https://amzn.to/4txB0B4" target="_blank" rel="nofollow sponsored" class="btn"><i class="fa-brands fa-amazon"></i> Check Price on Amazon</a>
@@ -201,8 +206,8 @@
     </div>
 
     <div class="pinterest-cta">
-      <h3><i class="fa-brands fa-pinterest"></i> Suka review jujur kayak gini?</h3>
-      <p>Aku test produk baru tiap bulan buat bantu produktivitas & hemat duit rumah tangga. Dari alat dapur sampe barang bayi. Kalo kamu mau tau produk apalagi yang udah lolos uji di rumahku, semua rangkumannya ada di Pinterest. Gak ada drama, cuma yang beneran work.</p>
+      <h3><i class="fa-brands fa-pinterest"></i> Love honest reviews like this?</h3>
+      <p>I test new products every month to help with daily productivity and save household money. From kitchen tools to baby gear. If you want to see what else passed the test in my home, all my curated finds are on Pinterest. No drama, just what actually works.</p>
       <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank" class="btn btn-pinterest"><i class="fa-brands fa-pinterest"></i> Visit My Pinterest Boards</a>
     </div>
 
@@ -217,17 +222,17 @@
       <div class="card article-card">
         <h4>WaterWipes vs. Huggies: Which Wipe Wins for Sensitive Skin?</h4>
         <p>We tested absorption, thickness, ingredients, and price per wipe over 30 days. Here's the honest breakdown...</p>
-        <button class="btn-outline btn" onclick="alert('Full guide coming next week! Follow my Pinterest to get notified.')"><i class="fa-solid fa-book-open"></i> Read Guide</button>
+        <button class="btn-outline btn" onclick="openGuide('wipes')"><i class="fa-solid fa-book-open"></i> Read Full Guide</button>
       </div>
       <div class="card article-card">
         <h4>5 Baby Essentials Under $25 on Amazon Right Now</h4>
         <p>Skip the overpriced "baby brand" markup. These hospital-recommended items cost less and work better...</p>
-        <button class="btn-outline btn" onclick="alert('Full guide coming next week! Follow my Pinterest to get notified.')"><i class="fa-solid fa-book-open"></i> Read Guide</button>
+        <button class="btn-outline btn" onclick="openGuide('baby25')"><i class="fa-solid fa-book-open"></i> Read Full Guide</button>
       </div>
       <div class="card article-card">
         <h4>Scrub Daddy vs. Scrub Mommy: Do You Need Both?</h4>
         <p>Texture, durability, and smell test after 60 days of dish duty. The results surprised us...</p>
-        <button class="btn-outline btn" onclick="alert('Full guide coming next week! Follow my Pinterest to get notified.')"><i class="fa-solid fa-book-open"></i> Read Guide</button>
+        <button class="btn-outline btn" onclick="openGuide('scrub')"><i class="fa-solid fa-book-open"></i> Read Full Guide</button>
       </div>
     </div>
   </div>
@@ -261,8 +266,8 @@
   <div class="container">
     <div class="about">
       <div class="about-grid">
-        <div>
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" alt="Dede working" style="border-radius: var(--radius); width: 100%;">
+        <div class="about-icon">
+          <i class="fa-solid fa-user-check"></i>
         </div>
         <div>
           <h3>Why I Started Dede's Picks</h3>
@@ -348,21 +353,16 @@
   </div>
 </section>
 
-<footer>
+<!-- Guide Pages -->
+<section class="guide-page" id="guide-wipes">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h4><i class="fa-solid fa-leaf"></i> Dede's Picks</h4>
-        <p style="opacity:0.8; font-size:14px; line-height:1.6;">Honest reviews and tutorials for everyday families. Based in Indonesia, testing products for readers worldwide since 2025.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="#reviews" onclick="showHome()"><i class="fa-solid fa-star"></i> Latest Reviews</a>
-        <a href="#guides" onclick="showHome()"><i class="fa-solid fa-book-open"></i> Buying Guides</a>
-        <a href="#tutorials" onclick="showHome()"><i class="fa-solid fa-laptop-code"></i> Tech Tutorials</a>
-        <a href="#about" onclick="showHome()"><i class="fa-solid fa-user"></i> About Me</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="#" onclick="alert('Coming soon!')"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
-        <a href="#" onclick="
+    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
+    <h1>WaterWipes vs. Huggies: Which Wipe Wins for Sensitive Skin?</h1>
+    <p>I tested both for 30 days on my son who gets diaper rash easily. Here's the no-BS breakdown.</p>
+    
+    <table class="comparison-table">
+      <tr><th>Category</th><th>WaterWipes</th><th>Huggies Natural Care</th></tr>
+      <tr><td><strong>Ingredients</strong></td><td>99.9% water, 0.1% fruit extract</td><td>99% water, aloe, vitamin E</td></tr>
+      <tr><td><strong>Best For</strong></td><td>Severe eczema, newborn face + butt</td><td>Daily use, sensitive skin, bulk savings</td></tr>
+      <tr><td><strong>Thickness</strong></td><td>Thinner. Need 2 for big messes.</td><td>Thick. 1 sheet usually enough.</td></tr>
+      <tr><td><strong>Price/100
