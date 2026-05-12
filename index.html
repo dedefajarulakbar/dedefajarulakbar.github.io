@@ -3,838 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dede's Picks — Honest Reviews & Everyday Finds</title>
-<meta name="description" content="Honest product reviews, tutorials, and Amazon finds for everyday life. By Dede Fajarul Akbar.">
-
-<!-- Google Fonts -->
+<title>Dede's Picks — Honest Amazon Reviews, Tech Tutorials & Buying Guides 2026</title>
+<meta name="description" content="Honest reviews of Amazon products for families, plus simple tech tutorials. We test everything so you don't waste money. By Dede Fajarul Akbar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- ============================================================
-     GOOGLE ADSENSE — Ganti dengan kode AdSense kamu setelah approved
-     Hapus komentar dan isi data-ad-client dengan ID AdSense kamu
-     ============================================================
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
--->
-
 <style>
-  /* ── VARIABLES ── */
   :root {
-    --cream:     #faf6f0;
-    --cream2:    #f3ebe0;
-    --cream3:    #ece0d0;
-    --brown:     #7a5230;
-    --brown-lt:  #a07855;
-    --brown-dk:  #3d2010;
-    --text:      #2e1f0f;
-    --text-mid:  #6b5040;
-    --text-lt:   #a08070;
-    --green:     #4a7c4a;
-    --white:     #ffffff;
-    --border:    rgba(122,82,48,0.15);
-    --shadow:    0 2px 16px rgba(61,32,16,0.08);
-    --radius:    12px;
-    --radius-sm: 8px;
+    --cream: #faf6f0; --cream2: #f3ebe0; --cream3: #ece0d0;
+    --brown: #7a5230; --brown-lt: #a07855; --brown-dk: #3d2010;
+    --text: #2e1f0f; --text-mid: #6b5040; --text-lt: #a08070;
+    --green: #4a7c4a; --white: #ffffff; --border: rgba(122,82,48,0.15);
+    --shadow: 0 2px 16px rgba(61,32,16,0.08); --radius: 12px; --radius-sm: 8px;
   }
-
-  /* ── RESET ── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.7;
-    font-size: 16px;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
   img { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
-
-  /* ── TOPBAR ── */
-  .topbar {
-    background: var(--brown-dk);
-    color: var(--cream2);
-    text-align: center;
-    font-size: 12px;
-    padding: 8px 16px;
-    letter-spacing: 0.5px;
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .topbar { background: var(--brown-dk); color: var(--cream2); text-align: center; font-size: 12px; padding: 8px 16px; letter-spacing: 0.5px; }
+  header { background: var(--white); border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+  .header-inner { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--brown); font-weight: 600; }
+  nav ul { display: flex; gap: 32px; list-style: none; }
+  nav a { font-size: 15px; font-weight: 500; color: var(--text-mid); transition: 0.2s; }
+  nav a:hover, nav a.active { color: var(--brown); }
+  .hero { padding: 80px 0 60px; text-align: center; background: linear-gradient(135deg, var(--cream) 0%, var(--cream2) 100%); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--brown-dk); margin-bottom: 16px; font-weight: 600; }
+  .hero p { font-size: 18px; color: var(--text-mid); max-width: 650px; margin: 0 auto 32px; }
+  .hero-badge { display: inline-block; background: var(--cream3); color: var(--brown); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; margin-bottom: 20px; }
+  .section { padding: 80px 0; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 36px; text-align: center; color: var(--brown-dk); margin-bottom: 16px; }
+  .section-sub { text-align: center; color: var(--text-mid); max-width: 600px; margin: 0 auto 50px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
+  .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,32,16,0.12); }
+  .card-video { width: 100%; height: 220px; object-fit: cover; background: #000; }
+  .card-content { padding: 28px; }
+  .card-tag { display: inline-block; background: var(--cream2); color: var(--brown-lt); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; margin-bottom: 12px; }
+  .card h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--brown); margin-bottom: 12px; line-height: 1.3; }
+  .card p { color: var(--text-mid); font-size: 15px; margin-bottom: 16px; }
+  .pros-cons { background: var(--cream); padding: 14px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; border-left: 3px solid var(--green); }
+  .pros-cons strong { color: var(--brown); }
+  .btn { display: inline-block; background: var(--green); color: var(--white); padding: 12px 28px; border-radius: 8px; font-weight: 500; transition: 0.2s; font-size: 15px; }
+  .btn:hover { background: #3a6b3a; transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--brown); border: 1.5px solid var(--brown); }
+  .btn-outline:hover { background: var(--brown); color: var(--white); }
+  .article-card { padding: 24px; }
+  .article-card h4 { font-size: 18px; color: var(--brown-dk); margin-bottom: 8px; font-weight: 500; }
+  .article-card p { font-size: 14px; color: var(--text-lt); margin-bottom: 12px; }
+  .about { background: var(--white); border-radius: var(--radius); padding: 60px; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; align-items: center; }
+  .about h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--brown-dk); margin-bottom: 20px; }
+  .about p { color: var(--text-mid); margin-bottom: 16px; }
+  footer { background: var(--brown-dk); color: var(--cream2); padding: 70px 0 24px; margin-top: 80px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 50px; }
+  .footer-col h4 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 20px; }
+  .footer-col a { display: block; color: var(--cream2); opacity: 0.8; margin-bottom: 10px; font-size: 14px; transition: 0.2s; }
+  .footer-col a:hover { opacity: 1; transform: translateX(4px); }
+  .footer-bottom { border-top: 1px solid rgba(250,246,240,0.2); padding-top: 24px; text-align: center; font-size: 13px; }
+  .disclaimer { background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; margin-top: 20px; font-size: 12px; line-height: 1.6; text-align: left; }
+  @media (max-width: 968px) {
+    nav ul { gap: 20px; }
+    .hero h1 { font-size: 36px; }
+    .about-grid, .footer-grid { grid-template-columns: 1fr; }
+    .about { padding: 40px 24px; }
   }
-  .topbar a { color: var(--cream3); text-decoration: underline; }
-
-  /* ── NAVBAR ── */
-  nav {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 62px;
-  }
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--brown-dk);
-    font-style: italic;
-  }
-  .logo span { color: var(--brown-lt); font-style: normal; }
-  .nav-links { display: flex; gap: 28px; }
-  .nav-links a {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-mid);
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--brown); }
-  .nav-cta {
-    background: var(--brown);
-    color: var(--white) !important;
-    padding: 7px 16px;
-    border-radius: 20px;
-    font-size: 12px !important;
-  }
-  .nav-cta:hover { background: var(--brown-dk) !important; color: var(--white) !important; }
-  .hamburger { display: none; cursor: pointer; font-size: 22px; color: var(--text-mid); background: none; border: none; }
-
-  /* ── HERO ── */
-  .hero {
-    background: var(--cream2);
-    background-image: radial-gradient(ellipse at 80% 50%, rgba(160,120,85,0.12) 0%, transparent 60%);
-    padding: 64px 24px 56px;
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; left: -60px;
-    width: 200px; height: 200px;
-    border-radius: 50%;
-    background: rgba(122,82,48,0.06);
-  }
-  .hero-eyebrow {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--brown-lt);
-    margin-bottom: 14px;
-    font-weight: 500;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 5vw, 48px);
-    font-weight: 600;
-    color: var(--brown-dk);
-    line-height: 1.2;
-    margin-bottom: 16px;
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero h1 em { color: var(--brown); font-style: italic; }
-  .hero-sub {
-    font-size: 17px;
-    color: var(--text-mid);
-    max-width: 520px;
-    margin: 0 auto 28px;
-    font-weight: 300;
-    line-height: 1.7;
-  }
-  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--brown);
-    color: var(--white);
-    padding: 12px 28px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.2s, transform 0.1s;
-  }
-  .btn-primary:hover { background: var(--brown-dk); transform: translateY(-1px); }
-  .btn-outline {
-    border: 1.5px solid var(--brown-lt);
-    color: var(--brown);
-    padding: 11px 24px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.2s;
-  }
-  .btn-outline:hover { background: var(--cream3); }
-  .hero-stats {
-    display: flex;
-    gap: 32px;
-    justify-content: center;
-    margin-top: 36px;
-    flex-wrap: wrap;
-  }
-  .hero-stat { text-align: center; }
-  .hero-stat strong { display: block; font-size: 22px; color: var(--brown); font-family: 'Playfair Display', serif; }
-  .hero-stat span { font-size: 12px; color: var(--text-lt); text-transform: uppercase; letter-spacing: 1px; }
-
-  /* ── ADS BANNER AREA ── */
-  .ads-banner {
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 12px 24px;
-    text-align: center;
-  }
-  .ads-label {
-    font-size: 10px;
-    color: var(--text-lt);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .ads-placeholder {
-    background: #f0ebe3;
-    border: 1.5px dashed var(--border);
-    border-radius: var(--radius-sm);
-    height: 90px;
-    max-width: 728px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: var(--text-lt);
-  }
-
-  /* ── MAIN LAYOUT ── */
-  .main-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 24px;
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 40px;
-    align-items: start;
-  }
-
-  /* ── SECTION HEADER ── */
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  .section-head h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--brown-dk);
-  }
-  .section-head a {
-    font-size: 13px;
-    color: var(--brown-lt);
-    font-weight: 500;
-  }
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin-bottom: 24px;
-  }
-
-  /* ── FEATURED POST (big) ── */
-  .featured-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    margin-bottom: 28px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s;
-  }
-  .featured-card:hover { transform: translateY(-2px); }
-  .featured-img {
-    background: var(--cream2);
-    min-height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 64px;
-  }
-  .featured-body { padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; }
-  .post-cat {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--brown-lt);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  .featured-body h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 21px;
-    color: var(--brown-dk);
-    line-height: 1.35;
-    margin-bottom: 10px;
-  }
-  .post-excerpt {
-    font-size: 14px;
-    color: var(--text-mid);
-    line-height: 1.6;
-    margin-bottom: 16px;
-    font-weight: 300;
-  }
-  .post-meta { font-size: 12px; color: var(--text-lt); margin-bottom: 14px; }
-  .read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 13px;
-    color: var(--brown);
-    font-weight: 500;
-    transition: gap 0.2s;
-  }
-  .read-more:hover { gap: 10px; }
-
-  /* ── POST GRID ── */
-  .post-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
-  .post-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 1px 4px rgba(61,32,16,0.05);
-  }
-  .post-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .card-img {
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 42px;
-  }
-  .card-img.warm  { background: linear-gradient(135deg, #f5e6d3, #edddc6); }
-  .card-img.green { background: linear-gradient(135deg, #dff0df, #cce5cc); }
-  .card-img.blue  { background: linear-gradient(135deg, #dce9f5, #ccdded); }
-  .card-img.pink  { background: linear-gradient(135deg, #f5dce8, #edccd9); }
-  .card-img.sage  { background: linear-gradient(135deg, #e2ead8, #d3e0c8); }
-  .card-img.peach { background: linear-gradient(135deg, #f5e4d0, #f0d8be); }
-  .card-body { padding: 16px; }
-  .card-body h3 { font-size: 15px; font-weight: 500; color: var(--brown-dk); line-height: 1.4; margin-bottom: 6px; }
-  .card-body p { font-size: 13px; color: var(--text-mid); line-height: 1.5; margin-bottom: 10px; font-weight: 300; }
-
-  /* ──  PRODUCT CARD ── */
-  .amz-section { margin-bottom: 32px; }
-  .amz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .amz-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    transition: box-shadow 0.2s;
-  }
-  .amz-card:hover { box-shadow: var(--shadow); }
-  .amz-icon {
-    width: 48px; height: 48px;
-    border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
-  }
-  .amz-info { flex: 1; }
-  .amz-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; line-height: 1.3; }
-  .amz-desc { font-size: 11px; color: var(--text-lt); margin-bottom: 8px; }
-  .amz-btn {
-    display: inline-block;
-    background: #ff9900;
-    color: var(--brown-dk);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 14px;
-    transition: background 0.2s;
-  }
-  .amz-btn:hover { background: #e68a00; }
-  .stars { color: #ff9900; font-size: 11px; margin-bottom: 4px; }
-
-  /* ── IN-CONTENT AD ── */
-  .ad-inline {
-    background: var(--cream2);
-    border: 1px dashed var(--cream3);
-    border-radius: var(--radius-sm);
-    padding: 12px;
-    text-align: center;
-    margin: 24px 0;
-  }
-  .ad-inline .ads-label { margin-bottom: 8px; }
-  .ad-inline .ads-placeholder { height: 250px; max-width: 300px; }
-
-  /* ── SIDEBAR ── */
-  .sidebar { position: sticky; top: 80px; }
-  .sidebar-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  .sidebar-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: var(--brown-dk);
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  .pick-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .pick-row:last-child { border-bottom: none; }
-  .pick-num { font-size: 18px; font-family: 'Playfair Display', serif; color: var(--cream3); font-weight: 600; width: 24px; flex-shrink: 0; }
-  .pick-icon { font-size: 20px; }
-  .pick-info { flex: 1; }
-  .pick-name { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.3; }
-  .pick-price { font-size: 11px; color: var(--brown-lt); }
-  .pick-link { font-size: 11px; color: var(--brown); font-weight: 500; background: var(--cream2); padding: 3px 8px; border-radius: 10px; }
-  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag {
-    background: var(--cream2);
-    color: var(--text-mid);
-    font-size: 12px;
-    padding: 5px 12px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    transition: background 0.2s;
-    cursor: pointer;
-  }
-  .tag:hover { background: var(--cream3); }
-  .about-avatar {
-    width: 56px; height: 56px;
-    border-radius: 50%;
-    background: var(--cream2);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 24px;
-    margin: 0 auto 10px;
-    border: 2px solid var(--border);
-  }
-  .about-text { font-size: 13px; color: var(--text-mid); text-align: center; line-height: 1.6; font-weight: 300; }
-  .about-text strong { color: var(--brown); }
-  .sidebar-ad { text-align: center; }
-  .sidebar-ad .ads-placeholder { height: 250px; max-width: 250px; }
-
-  /* ── NEWSLETTER ── */
-  .newsletter {
-    background: var(--cream2);
-    background-image: radial-gradient(ellipse at 30% 50%, rgba(122,82,48,0.08) 0%, transparent 60%);
-    border-top: 1px solid var(--border);
-    padding: 52px 24px;
-    text-align: center;
-  }
-  .newsletter h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--brown-dk);
-    margin-bottom: 10px;
-  }
-  .newsletter p { font-size: 15px; color: var(--text-mid); max-width: 440px; margin: 0 auto 24px; font-weight: 300; }
-  .nl-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
-  .nl-form input {
-    flex: 1;
-    padding: 12px 16px;
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    font-size: 14px;
-    background: var(--white);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    outline: none;
-  }
-  .nl-form input:focus { border-color: var(--brown-lt); }
-  .nl-form button {
-    background: var(--brown);
-    color: var(--white);
-    border: none;
-    padding: 12px 22px;
-    border-radius: 24px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.2s;
-  }
-  .nl-form button:hover { background: var(--brown-dk); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--brown-dk);
-    color: var(--cream2);
-    padding: 40px 24px 24px;
-  }
-  .footer-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 32px;
-    margin-bottom: 32px;
-  }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--white);
-    font-style: italic;
-    margin-bottom: 10px;
-  }
-  .footer-about { font-size: 13px; color: #c0a888; line-height: 1.7; }
-  .footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--cream3); margin-bottom: 12px; }
-  .footer-col a { display: block; font-size: 13px; color: #c0a888; margin-bottom: 7px; transition: color 0.2s; }
-  .footer-col a:hover { color: var(--white); }
-  .footer-bottom {
-    max-width: 1100px;
-    margin: 0 auto;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  .footer-copy { font-size: 12px; color: #9a8070; }
-  .disclaimer {
-    font-size: 11px;
-    color: #9a8070;
-    line-height: 1.6;
-    max-width: 600px;
-    padding: 12px 16px;
-    background: rgba(255,255,255,0.04);
-    border-radius: var(--radius-sm);
-    border-left: 2px solid var(--brown-lt);
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: block; }
-    .main-wrap { grid-template-columns: 1fr; }
-    .sidebar { position: static; }
-    .featured-card { grid-template-columns: 1fr; }
-    .featured-img { min-height: 160px; }
-    .post-grid { grid-template-columns: 1fr; }
-    .amz-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 20px; }
-    .nl-form { flex-direction: column; }
-    .footer-bottom { flex-direction: column; }
+  @media (max-width: 640px) {
+    nav { display: none; }
+    .hero h1 { font-size: 30px; }
+    .section { padding: 60px 0; }
+    .grid-3 { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
 <div class="topbar">
-  🌿 New post: <a href="#">How I Made My First Amazon Affiliate Commission</a> &nbsp;→
+  <div class="container">FTC Disclosure: This site contains affiliate links. We may earn a commission at no extra cost to you. <a href="#about" style="text-decoration: underline;">Learn more</a></div>
 </div>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="logo">Dede's <span>Picks</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="tutorials.html">Tutorials</a>
-      <a href="babykids.html">Baby & Kids</a>
-      <a href="health.html">Health</a>
-      <a href="about.html">About</a>
-      <a href="amazon.html" class="nav-cta">Amazon Picks →</a>
-    </div>
-    <button class="hamburger" aria-label="Menu">☰</button>
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo">Dede's Picks</a>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#guides">Buying Guides</a></li>
+        <li><a href="#tutorials">Tutorials</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">✦ Honest Reviews · Real Experience · Everyday Life</p>
-  <h1>Products I Actually Use &<em> Genuinely Recommend</em></h1>
-  <p class="hero-sub">From baby essentials to home must-haves — I test, research, and share only what's truly worth your money.</p>
-  <div class="hero-btns">
-    <a href="#picks" class="btn-primary">See Latest Picks →</a>
-    <a href="#about" class="btn-outline">About Me</a>
-  </div>
-  <div class="hero-stats">
-    <div class="hero-stat"><strong>50+</strong><span>Products Reviewed</span></div>
-    <div class="hero-stat"><strong>100%</strong><span>Honest Reviews</span></div>
-    <div class="hero-stat"><strong>Free</strong><span>No Extra Cost to You</span></div>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-badge">Updated May 2026 · Real Tests, No Fluff</div>
+    <h1>Honest Amazon Finds for Real Life</h1>
+    <p>We buy, test, and review everyday products so you don't waste money. Plus simple tech tutorials that actually help. No hype, just what works.</p>
+    <a href="#reviews" class="btn">See This Month's Top Picks</a>
   </div>
 </section>
 
-<!-- ADS BANNER (728x90) — Ganti dengan kode AdSense setelah approved -->
-<div class="ads-banner">
-  <div class="ads-label">Advertisement</div>
-  <div class="ads-placeholder">
-    📢 Ads will appear here after Google AdSense approval<br>
-    <small>Paste your &lt;ins class="adsbygoogle"&gt; code here</small>
-  </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="main-wrap">
-  <main>
-
-    <!-- FEATURED POST -->
-    <div class="section-head">
-      <h2>Featured Story</h2>
-      <a href="#">View all →</a>
-    </div>
-    <a href="#" class="featured-card">
-      <div class="featured-img">🧴</div>
-      <div class="featured-body">
-        <p class="post-cat">✦ Baby & Kids · In-Depth Review</p>
-        <h3>The Best Baby Wipes for Sensitive Skin — I Tested 5 Brands So You Don't Have To</h3>
-        <p class="post-excerpt">My honest comparison of WaterWipes, Huggies Natural Care, and 3 more popular brands. Which one is actually worth the price?</p>
-        <p class="post-meta">May 11, 2026 · 8 min read</p>
-        <span class="read-more">Read full story →</span>
-      </div>
-    </a>
-
-    <div class="divider"></div>
-
-    <!-- LATEST POSTS GRID -->
-    <div class="section-head" id="picks">
-      <h2>Latest Posts</h2>
-      <a href="#">All posts →</a>
-    </div>
-    <div class="post-grid">
-
-      <a href="#" class="post-card">
-        <div class="card-img green">🩺</div>
-        <div class="card-body">
-          <p class="post-cat">Health</p>
-          <h3>Best Alcohol Prep Pads 2026 — Which Is Truly Sterile?</h3>
-          <p>A quick guide to choosing the right prep pads for home use, diabetics, and first aid kits.</p>
-          <p class="post-meta">May 10 · 5 min read</p>
-          <span class="read-more" style="font-size:13px;color:var(--brown);">Read →</span>
-        </div>
-      </a>
-
-      <a href="#" class="post-card">
-        <div class="card-img warm">🧹</div>
-        <div class="card-body">
-          <p class="post-cat">Home & Clean</p>
-          <h3>Color-Coded Cleaning Sponges — Gimmick or Genius?</h3>
-          <p>I've been using these for 3 months. Here's my honest take on whether they're worth buying.</p>
-          <p class="post-meta">May 9 · 4 min read</p>
-          <span class="read-more" style="font-size:13px;color:var(--brown);">Read →</span>
-        </div>
-      </a>
-
-      <a href="#" class="post-card">
-        <div class="card-img sage">📦</div>
-        <div class="card-body">
-          <p class="post-cat">Tutorial</p>
-          <h3>How to Find the Best Amazon Products to Promote as an Affiliate</h3>
-          <p>My step-by-step process for picking high-converting products that actually earn commissions.</p>
-          <p class="post-meta">May 7 · 6 min read</p>
-          <span class="read-more" style="font-size:13px;color:var(--brown);">Read →</span>
-        </div>
-      </a>
-
-      <a href="#" class="post-card">
-        <div class="card-img peach">💡</div>
-        <div class="card-body">
-          <p class="post-cat">Story</p>
-          <h3>My First Month as an Amazon Affiliate — What I Learned (The Hard Way)</h3>
-          <p>0 clicks, 0 commissions. Here's what went wrong and how I fixed my strategy.</p>
-          <p class="post-meta">May 5 · 7 min read</p>
-          <span class="read-more" style="font-size:13px;color:var(--brown);">Read →</span>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- IN-CONTENT AD (300x250) -->
-    <div class="ad-inline">
-      <div class="ads-label">Advertisement</div>
-      <div class="ads-placeholder">
-        Paste Google AdSense 300x250 code here
-      </div>
-    </div>
-
-    <!-- AMAZON TOP PICKS -->
-    <div class="amz-section">
-      <div class="section-head">
-        <h2>🛒 This Week's Amazon Picks</h2>
-        <a href="#">All picks →</a>
-      </div>
-      <div class="amz-grid">
-
-        <div class="amz-card">
-          <div class="amz-icon" style="background:#f5e6d3;">🧴</div>
-          <div class="amz-info">
-            <div class="stars">★★★★★</div>
-            <div class="amz-name">WaterWipes Original Baby Wipes 720ct</div>
-            <div class="amz-desc">99.9% water · Fragrance-free · Sensitive skin</div>
-            <!-- GANTI href DENGAN LINK AFFILIATE AMAZON KAMU -->
-            <a href="https://amzn.to/4tvKblt" class="amz-btn" target="_blank" rel="nofollow noopener">View on Amazon →</a>
+<section class="section" id="reviews">
+  <div class="container">
+    <h2 class="section-title">May 2026: Tested & Approved</h2>
+    <p class="section-sub">Every product here lives in my house. If it breaks, leaks, or disappoints, you’ll read about it first.</p>
+    <div class="grid-3">
+      
+      <div class="card">
+        <video class="card-video" controls muted poster="https://m.media-amazon.com/images/I/71eN2f+6HBL._AC_SL1500_.jpg">
+          <source src="/mnt/data/WaterWipes_pack_with_water_droplets_202605120522.mp4" type="video/mp4">
+        </video>
+        <div class="card-content">
+          <span class="card-tag">Baby & Mom</span>
+          <h3>WaterWipes: 99.9% Water, 0% Regret?</h3>
+          <p>My son broke out in rashes from scented wipes. I switched to WaterWipes — literally water + fruit extract — and his skin cleared in 2 days. We use these for diaper changes, sticky hands, and even wiping his face after meals.</p>
+          <div class="pros-cons">
+            <strong>What I Like:</strong> No fragrance or alcohol. Approved by National Eczema Association.<br>
+            <strong>Heads Up:</strong> Thinner than Huggies. Use 2 sheets for big messes.
           </div>
+          <a href="https://amzn.to/4tvKblt" class="btn" target="_blank" rel="nofollow sponsored">Check Price on Amazon</a>
         </div>
+      </div>
 
-        <div class="amz-card">
-          <div class="amz-icon" style="background:#dff0df;">👶</div>
-          <div class="amz-info">
-            <div class="stars">★★★★☆</div>
-            <div class="amz-name">Huggies Natural Care 768 Wipes</div>
-            <div class="amz-desc">Plant-based · Hypoallergenic · Value pack</div>
-            <a href="https://amzn.to/42siZsU" class="amz-btn" target="_blank" rel="nofollow noopener">View on Amazon →</a>
+      <div class="card">
+        <video class="card-video" controls muted poster="https://m.media-amazon.com/images/I/71eN2f+6HBL._AC_SL1500_.jpg">
+          <source src="/mnt/data/scrub_daddy_color_coded_202605120516.mp4" type="video/mp4">
+        </video>
+        <div class="card-content">
+          <span class="card-tag">Home & Kitchen</span>
+          <h3>Scrub Daddy: The Sponge That Doesn't Stink</h3>
+          <p>I was done with smelly kitchen sponges. Scrub Daddy gets firm in cold water to scrub burnt pans, then soft in warm water for wine glasses. One 3-pack lasted me 4 months. The colors help me keep bathroom vs. kitchen sponges separate.</p>
+          <div class="pros-cons">
+            <strong>What I Like:</strong> Scratch-free on non-stick. Never smells.<br>
+            <strong>Heads Up:</strong> Costs more than regular sponges, but worth it.
           </div>
+          <a href="https://amzn.to/42xx8F4" class="btn" target="_blank" rel="nofollow sponsored">Check Price on Amazon</a>
         </div>
+      </div>
 
-        <div class="amz-card">
-          <div class="amz-icon" style="background:#dce9f5;">🩺</div>
-          <div class="amz-info">
-            <div class="stars">★★★★★</div>
-            <div class="amz-name">MedPride Sterile Alcohol Prep Pads</div>
-            <div class="amz-desc">70% isopropyl · Individually wrapped · Sterile</div>
-            <a href="https://amzn.to/4txB0B4" class="amz-btn" target="_blank" rel="nofollow noopener">View on Amazon →</a>
+      <div class="card">
+        <video class="card-video" controls muted poster="https://m.media-amazon.com/images/I/71eN2f+6HBL._AC_SL1500_.jpg">
+          <source src="/mnt/data/huggies_natural_care_video_202605120501.mp4" type="video/mp4">
+        </video>
+        <div class="card-content">
+          <span class="card-tag">Baby & Mom</span>
+          <h3>Huggies Natural Care: 768 Wipes = 3 Months Peace</h3>
+          <p>This is my bulk buy. 768 wipes for around $25 means I’m not running to the store every week. They’re thick, plant-based, and pull out one at a time — no more 5-wipe clumps. We’ve used them since day 1 with no irritation.</p>
+          <div class="pros-cons">
+            <strong>What I Like:</strong> Best value per wipe. Accepted by National Eczema Association.<br>
+            <strong>Heads Up:</strong> The box is huge. Make storage space first.
           </div>
+          <a href="https://amzn.to/42siZsU" class="btn" target="_blank" rel="nofollow sponsored">Check Price on Amazon</a>
         </div>
+      </div>
 
-        <div class="amz-card">
-          <div class="amz-icon" style="background:#f0e4d4;">🧹</div>
-          <div class="amz-info">
-            <div class="stars">★★★★☆</div>
-            <div class="amz-name">Color-Code Cleaning Sponge Set</div>
-            <div class="amz-desc">Scratch-free · Odor-resistant · Pack of 6</div>
-            <a href="https://amzn.to/42xx8F4" class="amz-btn" target="_blank" rel="nofollow noopener">View on Amazon →</a>
+      <div class="card">
+        <video class="card-video" controls muted poster="https://m.media-amazon.com/images/I/61eN2f+6HBL._AC_SL1500_.jpg">
+          <source src="/mnt/data/med_pride_alcohol_pads_202605120513.mp4" type="video/mp4">
+        </video>
+        <div class="card-content">
+          <span class="card-tag">Health & First Aid</span>
+          <h3>Med Pride Alcohol Pads: 200 Sterile Wipes Under $7</h3>
+          <p>I keep 5 in my car, 10 in my diaper bag, rest in our medicine cabinet. 70% isopropyl alcohol, individually sealed so they don’t dry out. We use them for small cuts, cleaning thermometers, and wiping phones. At 3 cents per pad, I don’t feel bad using them.</p>
+          <div class="pros-cons">
+            <strong>What I Like:</strong> Hospital-grade. Resealable box.<br>
+            <strong>Heads Up:</strong> Use immediately after opening — alcohol evaporates fast.
           </div>
+          <a href="https://amzn.to/4txB0B4" class="btn" target="_blank" rel="nofollow sponsored">Check Price on Amazon</a>
         </div>
-
       </div>
+
     </div>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <!-- ABOUT -->
-    <div class="sidebar-card" id="about">
-      <div class="about-avatar">👤</div>
-      <p class="about-text">Hi, I'm <strong>Dede</strong>! I share honest product reviews and everyday Amazon finds. Everything I recommend, I research carefully — so you don't waste your money.</p>
-      <br>
-      <a href="#" style="display:block;text-align:center;font-size:13px;color:var(--brown);font-weight:500;">Read my story →</a>
-    </div>
-
-    <!-- TOP PICKS -->
-    <div class="sidebar-card">
-      <p class="sidebar-title">Top Picks This Week</p>
-      <div class="pick-row">
-        <span class="pick-num">1</span>
-        <span class="pick-icon">🧴</span>
-        <div class="pick-info">
-          <div class="pick-name">WaterWipes 720ct</div>
-          <div class="pick-price">Baby Wipes · ★★★★★</div>
-        </div>
-        <a href="YOUR-AFFILIATE-LINK" class="pick-link">Buy →</a>
-      </div>
-      <div class="pick-row">
-        <span class="pick-num">2</span>
-        <span class="pick-icon">👶</span>
-        <div class="pick-info">
-          <div class="pick-name">Huggies Natural 768ct</div>
-          <div class="pick-price">Baby Wipes · ★★★★☆</div>
-        </div>
-        <a href="YOUR-AFFILIATE-LINK" class="pick-link">Buy →</a>
-      </div>
-      <div class="pick-row">
-        <span class="pick-num">3</span>
-        <span class="pick-icon">🩺</span>
-        <div class="pick-info">
-          <div class="pick-name">MedPride Alcohol Pads</div>
-          <div class="pick-price">Health · ★★★★★</div>
-        </div>
-        <a href="YOUR-AFFILIATE-LINK" class="pick-link">Buy →</a>
-      </div>
-    </div>
-
-    <!-- SIDEBAR AD -->
-    <div class="sidebar-card sidebar-ad">
-      <div class="ads-label">Advertisement</div>
-      <div class="ads-placeholder" style="height:250px;max-width:250px;">
-        Paste AdSense 250x250 here
-      </div>
-    </div>
-
-    <!-- CATEGORIES -->
-    <div class="sidebar-card">
-      <p class="sidebar-title">Browse Topics</p>
-      <div class="tag-cloud">
-        <span class="tag">Baby Wipes</span>
-        <span class="tag">Health</span>
-        <span class="tag">Cleaning</span>
-        <span class="tag">Home</span>
-        <span class="tag">Tutorial</span>
-        <span class="tag">Story</span>
-        <span class="tag">Amazon Deals</span>
-        <span class="tag">First Aid</span>
-        <span class="tag">Value Packs</span>
-      </div>
-    </div>
-
-  </aside>
-</div>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <h2>Get Weekly Picks in Your Inbox</h2>
-  <p>Every week I share my top finds, honest reviews, and deals worth knowing about. No spam, ever.</p>
-  <div class="nl-form">
-    <input type="email" placeholder="your@email.com">
-    <button>Subscribe →</button>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="section" id="guides" style="background: var(--cream2);">
+  <div class="container">
+    <h2 class="section-title">Buying Guides</h2>
+    <p class="section-sub">Not sure what to buy? These guides compare top options so you can choose fast.</p>
+    <div class="grid-3">
+      <div class="card article-card">
+        <h4>WaterWipes vs. Huggies Natural Care: Which Wipe Wins for Sensitive Skin?</h4>
+        <p>We tested absorption, thickness, ingredients, and price per wipe over 30 days. Here's the honest breakdown...</p>
+        <a href="#" class="btn-outline btn">Read Guide</a>
+      </div>
+      <div class="card article-card">
+        <h4>5 Baby Essentials Under $25 on Amazon Right Now</h4>
+        <p>Skip the overpriced "baby brand" markup. These hospital-recommended items cost less and work better...</p>
+        <a href="#" class="btn-outline btn">Read Guide</a>
+      </div>
+      <div class="card article-card">
+        <h4>Scrub Daddy vs. Scrub Mommy: Do You Need Both?</h4>
+        <p>Texture, durability, and smell test after 60 days of dish duty. The results surprised us...</p>
+        <a href="#" class="btn-outline btn">Read Guide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tutorials">
+  <div class="container">
+    <h2 class="section-title">Simple Tech Tutorials</h2>
+    <p class="section-sub">Quick fixes for your laptop & PC. No IT degree needed.</p>
+    <div class="grid-3">
+      <div class="card article-card">
+        <h4>How to Check Internet Speed: Ping Google in 10 Seconds</h4>
+        <p>1. Press <code>Win + R</code>, type <code>cmd</code>, hit Enter.<br>2. Type <code>ping google.com -t</code> and press Enter.<br>3. Look for "time=" — under 50ms is great, over 150ms means laggy.</p>
+        <a href="#" class="btn-outline btn">Full Steps</a>
+      </div>
+      <div class="card article-card">
+        <h4>Is Your Laptop Overheating? Check Temperature Now</h4>
+        <p>Method 1: Open Task Manager <code>Ctrl + Shift + Esc</code> → Performance tab.<br>Method 2: Download free tool HWInfo or Speccy for exact CPU/GPU temps. Under 80°C is safe.</p>
+        <a href="#" class="btn-outline btn">Full Steps</a>
+      </div>
+      <div class="card article-card">
+        <h4>Find What’s Eating Your Storage in 1 Minute</h4>
+        <p>Windows: Settings → System → Storage → See what’s taking space.<br>Pro tip: "Temporary files" can free up 10GB+ instantly.</p>
+        <a href="#" class="btn-outline btn">Full Steps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" style="background: var(--cream2);">
+  <div class="container">
+    <div class="about">
+      <div class="about-grid">
+        <div>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop" alt="Dede working" style="border-radius: var(--radius); width: 100%;">
+        </div>
+        <div>
+          <h3>Why I Started Dede's Picks</h3>
+          <p>I'm Dede. In 2024, I wasted over $300 on Amazon products with 5-star reviews that were... terrible. Inflatable pool that popped in 2 hours. "Leak-proof" bottles that soaked my bag.</p>
+          <p>I realized most reviews are fake or paid. So I started buying and testing products myself. If it survives my toddler, my kitchen, and my daily life, it gets featured here.</p>
+          <p><strong>My promise:</strong> Every product on this site is in my home right now. I’ll tell you what I love, what broke, and what I wouldn’t buy again. My goal is simple — help you save money and buy things that actually work.</p>
+          <p>Questions? <a href="mailto:hello@dedefajarulakbar.github.io" style="color: var(--brown); text-decoration: underline;">Email me</a>. I read every message.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">Dede's Picks</div>
-      <p class="footer-about">Honest product reviews and Amazon finds for everyday families. Based in Indonesia, writing for readers everywhere.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Dede's Picks</h4>
+        <p style="opacity:0.8; font-size:14px; line-height:1.6;">Honest reviews and tutorials for everyday families. Based in Indonesia, testing products for readers worldwide since 2025.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#reviews">Latest Reviews</a>
+        <a href="#guides">Buying Guides</a>
+        <a href="#tutorials">Tech Tutorials</a>
+        <a href="#about">About Me</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/disclaimer.html">Disclaimer</a>
+        <a href="/terms.html">Terms of Use</a>
+        <a href="mailto:hello@dedefajarulakbar.github.io">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://pinterest.com/dedefajarulakbar" target="_blank">Pinterest</a>
+        <a href="#" target="_blank">YouTube</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <a href="#">Latest Posts</a>
-      <a href="#">Reviews</a>
-      <a href="#">Tutorials</a>
-      <a href="#">Amazon Picks</a>
-      <a href="#">About Me</a>
-    </div>
-    <div class="footer-col">
-      <h4>Follow</h4>
-      <a href="#">Pinterest</a>
-      <a href="#">Instagram</a>
-      <a href="#">Disclaimer</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Contact</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p class="footer-copy">© 2026 Dede's Picks · All rights reserved</p>
-    <div class="disclaimer">
-      ⚠️ <strong>Affiliate Disclosure:</strong> This site is a participant in the Amazon Associates Program. As an Amazon Associate I earn from qualifying purchases at no additional cost to you. This does not affect my reviews or recommendations.
+    <div class="footer-bottom">
+      <p>© 2026 Dede's Picks · Made with care in Meulaboh, Aceh</p>
+      <div class="disclaimer">
+        <strong>Amazon Affiliate Disclosure:</strong> Dede's Picks is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate I earn from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon at the time of purchase will apply. This content is not provided or endorsed by Amazon. We only recommend products we’ve personally tested and use in our own home.
+      </div>
     </div>
   </div>
 </footer>
