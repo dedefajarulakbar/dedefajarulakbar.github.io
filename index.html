@@ -14,7 +14,8 @@
     --cream: #faf6f0; --cream2: #f3ebe0; --cream3: #ece0d0;
     --brown: #7a5230; --brown-lt: #a07855; --brown-dk: #3d2010;
     --text: #2e1f0f; --text-mid: #6b5040; --text-lt: #a08070;
-    --green: #4a7c4a; --red: #c0392b; --white: #ffffff; --border: rgba(122,82,48,0.15);
+    --green: #4a7c4a; --red: #c0392b; --blue: #3498db; --purple: #9b59b6;
+    --white: #ffffff; --border: rgba(122,82,48,0.15);
     --shadow: 0 2px 16px rgba(61,32,16,0.08); --radius: 12px; --radius-sm: 8px;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,7 +43,11 @@
   .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 32px; }
   .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; border: 1px solid var(--border); transition: 0.3s; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(61,32,16,0.12); }
-  .card-img { width: 100%; height: 260px; object-fit: contain; background: var(--cream2); padding: 20px; }
+  .card-icon-box { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; font-size: 80px; color: var(--white); }
+  .icon-water { background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); }
+  .icon-scrub { background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); }
+  .icon-huggies { background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%); }
+  .icon-pads { background: linear-gradient(135deg, #55efc4 0%, #00b894 100%); }
   .card-content { padding: 28px; }
   .card-tag { display: inline-block; background: var(--cream2); color: var(--brown-lt); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; margin-bottom: 12px; }
   .card-tag i { margin-right: 4px; }
@@ -77,16 +82,6 @@
   .footer-bottom { border-top: 1px solid rgba(250,246,240,0.2); padding-top: 24px; text-align: center; font-size: 13px; }
   .disclaimer { background: rgba(0,0,0,0.2); padding: 18px; border-radius: 8px; margin-top: 20px; font-size: 12px; line-height: 1.6; text-align: left; }
   code { background: var(--cream2); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
-  .tutorial-page, .guide-page { display: none; padding: 60px 0; }
-  .tutorial-page.active, .guide-page.active { display: block; }
-  .tutorial-page h1, .guide-page h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brown-dk); margin-bottom: 20px; }
-  .tutorial-page h3, .guide-page h3 { font-size: 20px; color: var(--brown); margin: 24px 0 12px; }
-  .tutorial-page ol, .guide-page ol, .guide-page ul { padding-left: 20px; }
-  .tutorial-page li, .guide-page li { margin-bottom: 12px; color: var(--text-mid); }
-  .back-btn { margin-bottom: 30px; }
-  .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-  .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 12px; text-align: left; }
-  .comparison-table th { background: var(--cream2); color: var(--brown-dk); }
   @media (max-width: 968px) {
     nav ul { gap: 20px; }
     .hero h1 { font-size: 36px; }
@@ -110,14 +105,14 @@
 
 <header>
   <div class="container header-inner">
-    <a href="#" class="logo" onclick="showHome()"><i class="fa-solid fa-leaf"></i>Dede's Picks</a>
+    <a href="#" class="logo"><i class="fa-solid fa-leaf"></i>Dede's Picks</a>
     <nav>
       <ul>
-        <li><a href="#home" class="active" onclick="showHome()"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="#reviews" onclick="showHome()"><i class="fa-solid fa-star"></i> Reviews</a></li>
-        <li><a href="#guides" onclick="showHome()"><i class="fa-solid fa-book-open"></i> Guides</a></li>
-        <li><a href="#tutorials" onclick="showHome()"><i class="fa-solid fa-laptop-code"></i> Tutorials</a></li>
-        <li><a href="#about" onclick="showHome()"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="#home" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#reviews"><i class="fa-solid fa-star"></i> Reviews</a></li>
+        <li><a href="#guides"><i class="fa-solid fa-book-open"></i> Guides</a></li>
+        <li><a href="#tutorials"><i class="fa-solid fa-laptop-code"></i> Tutorials</a></li>
+        <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
       </ul>
     </nav>
   </div>
@@ -140,7 +135,7 @@
     <div class="grid-3">
       
       <div class="card" id="waterwipes">
-        <img src="https://i.imgur.com/8Q1Z5yT.jpg" alt="WaterWipes Baby Wipes" class="card-img">
+        <div class="card-icon-box icon-water"><i class="fa-solid fa-droplet"></i></div>
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-baby"></i> Baby & Mom</span>
           <h3>WaterWipes: When Every Wipe Was a Gamble</h3>
@@ -156,7 +151,7 @@
       </div>
 
       <div class="card" id="scrubdaddy">
-        <img src="https://i.imgur.com/k3L9vXp.jpg" alt="Scrub Daddy Sponge" class="card-img">
+        <div class="card-icon-box icon-scrub"><i class="fa-solid fa-hand-sparkles"></i></div>
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-kitchen-set"></i> Home & Kitchen</span>
           <h3>Scrub Daddy: The End of Stinky Sponge Drama</h3>
@@ -172,7 +167,7 @@
       </div>
 
       <div class="card" id="huggies">
-        <img src="https://i.imgur.com/VyJqP7m.jpg" alt="Huggies Natural Care Wipes" class="card-img">
+        <div class="card-icon-box icon-huggies"><i class="fa-solid fa-box-archive"></i></div>
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-baby"></i> Baby & Mom</span>
           <h3>Huggies Natural Care: My Bulk-Buy Sanity Saver</h3>
@@ -188,7 +183,7 @@
       </div>
 
       <div class="card" id="alcoholpads">
-        <img src="https://i.imgur.com/9cX2wQr.jpg" alt="Med Pride Alcohol Pads" class="card-img">
+        <div class="card-icon-box icon-pads"><i class="fa-solid fa-pump-medical"></i></div>
         <div class="card-content">
           <span class="card-tag"><i class="fa-solid fa-briefcase-medical"></i> Health & First Aid</span>
           <h3>Alcohol Pads: The 3-Cent Lifesaver</h3>
@@ -222,17 +217,17 @@
       <div class="card article-card">
         <h4>WaterWipes vs. Huggies: Which Wipe Wins for Sensitive Skin?</h4>
         <p>We tested absorption, thickness, ingredients, and price per wipe over 30 days. Here's the honest breakdown...</p>
-        <button class="btn-outline btn" onclick="openGuide('wipes')"><i class="fa-solid fa-book-open"></i> Read Full Guide</button>
+        <a href="guide-wipes.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-book-open"></i> Read Full Guide</a>
       </div>
       <div class="card article-card">
         <h4>5 Baby Essentials Under $25 on Amazon Right Now</h4>
         <p>Skip the overpriced "baby brand" markup. These hospital-recommended items cost less and work better...</p>
-        <button class="btn-outline btn" onclick="openGuide('baby25')"><i class="fa-solid fa-book-open"></i> Read Full Guide</button>
+        <a href="guide-baby25.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-book-open"></i> Read Full Guide</a>
       </div>
       <div class="card article-card">
         <h4>Scrub Daddy vs. Scrub Mommy: Do You Need Both?</h4>
         <p>Texture, durability, and smell test after 60 days of dish duty. The results surprised us...</p>
-        <button class="btn-outline btn" onclick="openGuide('scrub')"><i class="fa-solid fa-book-open"></i> Read Full Guide</button>
+        <a href="guide-scrub.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-book-open"></i> Read Full Guide</a>
       </div>
     </div>
   </div>
@@ -246,17 +241,17 @@
       <div class="card article-card">
         <h4>How to Check Internet Speed: Ping Google in 10 Seconds</h4>
         <p>1. Press <code>Win + R</code>, type <code>cmd</code>, hit Enter.<br>2. Type <code>ping google.com -t</code> and press Enter.<br>3. Look for "time=" — under 50ms is great.</p>
-        <button class="btn-outline btn" onclick="openTutorial('ping')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</button>
+        <a href="tutorial-ping.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
       </div>
       <div class="card article-card">
         <h4>Is Your Laptop Overheating? Check Temperature Now</h4>
         <p>Method 1: Open Task Manager <code>Ctrl + Shift + Esc</code> → Performance tab.<br>Method 2: Download free tool HWInfo for exact CPU/GPU temps. Under 80°C is safe.</p>
-        <button class="btn-outline btn" onclick="openTutorial('temp')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</button>
+        <a href="tutorial-temp.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
       </div>
       <div class="card article-card">
         <h4>Find What’s Eating Your Storage in 1 Minute</h4>
         <p>Windows: Settings → System → Storage → See what’s taking space.<br>Pro tip: "Temporary files" can free up 10GB+ instantly.</p>
-        <button class="btn-outline btn" onclick="openTutorial('storage')"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</button>
+        <a href="tutorial-storage.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
       </div>
     </div>
   </div>
@@ -282,87 +277,42 @@
 </section>
 </main>
 
-<!-- Tutorial Pages -->
-<section class="tutorial-page" id="tutorial-ping">
+<footer>
   <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
-    <h1>How to Check Internet Speed: Ping Google</h1>
-    <p>Ping test shows how fast your computer talks to Google's server. Lower = better for gaming, Zoom, Netflix.</p>
-    <h3><i class="fa-brands fa-windows"></i> Step-by-Step Windows:</h3>
-    <ol>
-      <li>Press <code>Windows + R</code> on your keyboard. A "Run" box appears.</li>
-      <li>Type <code>cmd</code> and press Enter. Black window called "Command Prompt" opens.</li>
-      <li>Type <code>ping google.com -t</code> and press Enter. Don't close the window.</li>
-      <li>Look at "time=XXms" on each line. This is your ping.</li>
-      <li>Press <code>Ctrl + C</code> to stop the test.</li>
-    </ol>
-    <h3><i class="fa-solid fa-gauge-high"></i> How to Read Results:</h3>
-    <p><strong>0-50ms:</strong> Excellent. Perfect for gaming & video calls.<br>
-    <strong>50-100ms:</strong> Good. Normal browsing is fine.<br>
-    <strong>100-150ms:</strong> Okay. Might lag in games.<br>
-    <strong>150ms+:</strong> Slow. Call your internet provider.</p>
-    <h3><i class="fa-brands fa-apple"></i> Mac Users:</h3>
-    <p>Open "Terminal" → type <code>ping google.com</code> → Enter. Same results.</p>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4><i class="fa-solid fa-leaf"></i> Dede's Picks</h4>
+        <p style="opacity:0.8; font-size:14px; line-height:1.6;">Honest reviews and tutorials for everyday families. Based in Indonesia, testing products for readers worldwide since 2025.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#reviews"><i class="fa-solid fa-star"></i> Latest Reviews</a>
+        <a href="#guides"><i class="fa-solid fa-book-open"></i> Buying Guides</a>
+        <a href="#tutorials"><i class="fa-solid fa-laptop-code"></i> Tech Tutorials</a>
+        <a href="#about"><i class="fa-solid fa-user"></i> About Me</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html" target="_blank"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a>
+        <a href="disclaimer.html" target="_blank"><i class="fa-solid fa-circle-exclamation"></i> Disclaimer</a>
+        <a href="terms.html" target="_blank"><i class="fa-solid fa-file-contract"></i> Terms of Use</a>
+        <a href="mailto:hello@dedefajarulakbar.github.io"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank"><i class="fa-brands fa-pinterest"></i> Pinterest</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dede's Picks · Made with care in Meulaboh, Aceh</p>
+      <div class="disclaimer">
+        <strong>Amazon Affiliate Disclosure:</strong> Dede's Picks is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate I earn from qualifying purchases. Product prices and availability are accurate as of the date/time indicated and are subject to change. Any price and availability information displayed on Amazon at the time of purchase will apply. This content is not provided or endorsed by Amazon. We only recommend products we’ve personally tested and use in our own home.
+      </div>
+    </div>
   </div>
-</section>
+</footer>
 
-<section class="tutorial-page" id="tutorial-temp">
-  <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
-    <h1>Is Your Laptop Overheating? Check Temperature</h1>
-    <p>Laptops slow down or shut off when too hot. Check your CPU/GPU temp in 30 seconds.</p>
-    <h3><i class="fa-solid fa-bolt"></i> Method 1: Task Manager - Quick Check</h3>
-    <ol>
-      <li>Press <code>Ctrl + Shift + Esc</code> to open Task Manager.</li>
-      <li>Click "Performance" tab on the left.</li>
-      <li>Click "CPU" or "GPU". Look for temperature. If not shown, use Method 2.</li>
-    </ol>
-    <h3><i class="fa-solid fa-download"></i> Method 2: HWInfo - Exact Temperature</h3>
-    <ol>
-      <li>Google "HWInfo download" → Download free version from hwinfo.com</li>
-      <li>Install → Run HWInfo → Click "Sensors-only" → Run.</li>
-      <li>Scroll to "CPU" section. Look for "CPU Package" temp.</li>
-      <li>Scroll to "GPU" section for graphics card temp.</li>
-    </ol>
-    <h3><i class="fa-solid fa-temperature-half"></i> Safe Temperatures:</h3>
-    <p><strong>Under 60°C:</strong> Cool. Perfect.<br>
-    <strong>60-80°C:</strong> Warm. Normal under load/gaming.<br>
-    <strong>80-90°C:</strong> Hot. Clean fans, use cooling pad.<br>
-    <strong>90°C+:</strong> Danger. Shut down, check for dust.</p>
-  </div>
-</section>
-
-<section class="tutorial-page" id="tutorial-storage">
-  <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
-    <h1>Find What’s Eating Your Storage in 1 Minute</h1>
-    <p>Hard drive full? Find the biggest folders and delete junk fast.</p>
-    <h3><i class="fa-brands fa-windows"></i> Windows 11/10 Steps:</h3>
-    <ol>
-      <li>Click Start → Settings ⚙️</li>
-      <li>Click "System" → "Storage"</li>
-      <li>Wait 10 seconds. Windows scans your drive.</li>
-      <li>Click each category: "Apps", "Documents", "Pictures", "Temporary files"</li>
-      <li>Click "Temporary files" → Check all boxes → "Remove files". This alone frees 5-20GB.</li>
-      <li>Go back → Click "Other" to see huge folders. Delete what you don't need.</li>
-    </ol>
-    <h3><i class="fa-solid fa-star"></i> Pro Tip: TreeSize Free</h3>
-    <p>Download "TreeSize Free" from jam-software.com. It shows a map of your entire hard drive. Biggest folders = biggest boxes. Delete old downloads, videos, games you don't play.</p>
-    <h3><i class="fa-brands fa-apple"></i> Mac Users:</h3>
-    <p>Apple Menu → About This Mac → Storage → Manage → See recommendations.</p>
-  </div>
-</section>
-
-<!-- Guide Pages -->
-<section class="guide-page" id="guide-wipes">
-  <div class="container">
-    <button class="btn-outline btn back-btn" onclick="window.close()"><i class="fa-solid fa-xmark"></i> Close Tab</button>
-    <h1>WaterWipes vs. Huggies: Which Wipe Wins for Sensitive Skin?</h1>
-    <p>I tested both for 30 days on my son who gets diaper rash easily. Here's the no-BS breakdown.</p>
-    
-    <table class="comparison-table">
-      <tr><th>Category</th><th>WaterWipes</th><th>Huggies Natural Care</th></tr>
-      <tr><td><strong>Ingredients</strong></td><td>99.9% water, 0.1% fruit extract</td><td>99% water, aloe, vitamin E</td></tr>
-      <tr><td><strong>Best For</strong></td><td>Severe eczema, newborn face + butt</td><td>Daily use, sensitive skin, bulk savings</td></tr>
-      <tr><td><strong>Thickness</strong></td><td>Thinner. Need 2 for big messes.</td><td>Thick. 1 sheet usually enough.</td></tr>
-      <tr><td><strong>Price/100
+</body>
+</html>
