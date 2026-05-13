@@ -116,7 +116,7 @@
 
 <section class="section" id="reviews">
   <div class="container">
-    <h2 class="section-title">May 2026: Tested & Approved</h2>
+    <h2 class="section-title">Tested & Approved</h2>
     <p class="section-sub">Every product here lives in my house. Read the story, see the proof, then decide.</p>
     <div class="grid-3">
       <div class="card" id="waterwipes">
@@ -201,6 +201,9 @@
         <a href="guide-scrub.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-book-open"></i> Read Full Guide</a>
       </div>
     </div>
+    <div class="view-all-btn">
+      <a href="guides.html" class="btn btn-outline" style="padding: 14px 28px;"><i class="fa-solid fa-layer-group"></i> View All Guides</a>
+    </div>
   </div>
 </section>
 
@@ -208,22 +211,41 @@
   <div class="container">
     <h2 class="section-title">Simple Tech Tutorials</h2>
     <p class="section-sub">Quick fixes for your laptop & PC. No IT degree needed.</p>
-    <div class="grid-3">
+    <div class="grid-3" id="tutorial-grid">
       <div class="card article-card">
-        <h4>How to Check Internet Speed: Ping Google in 10 Seconds</h4>
+        <h4><i class="fa-solid fa-wifi" style="color: var(--blue);"></i> How to Check Internet Speed: Ping Google in 10 Seconds</h4>
         <p>1. Press <code>Win + R</code>, type <code>cmd</code>, hit Enter.<br>2. Type <code>ping google.com -t</code> and press Enter.<br>3. Look for "time=" — under 50ms is great.</p>
         <a href="tutorial-ping.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
       </div>
       <div class="card article-card">
-        <h4>Is Your Laptop Overheating? Check Temperature Now</h4>
+        <h4><i class="fa-solid fa-temperature-three-quarters" style="color: var(--red);"></i> Is Your Laptop Overheating? Check Temperature Now</h4>
         <p>Method 1: Open Task Manager <code>Ctrl + Shift + Esc</code> → Performance tab.<br>Method 2: Download free tool HWInfo for exact CPU/GPU temps. Under 80°C is safe.</p>
         <a href="tutorial-temp.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
       </div>
       <div class="card article-card">
-        <h4>Find What’s Eating Your Storage in 1 Minute</h4>
+        <h4><i class="fa-solid fa-hard-drive" style="color: var(--purple);"></i> Find What’s Eating Your Storage in 1 Minute</h4>
         <p>Windows: Settings → System → Storage → See what’s taking space.<br>Pro tip: "Temporary files" can free up 10GB+ instantly.</p>
         <a href="tutorial-storage.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
       </div>
+      <!-- Hidden tutorials for future expansion -->
+      <div class="card article-card extra-tutorial" style="display:none;">
+        <h4><i class="fa-solid fa-broom" style="color: var(--green);"></i> Clean Temp Files Safely: Free 10GB in 2 Minutes</h4>
+        <p>Run Disk Cleanup, clear Windows Update cache, and empty Recycle Bin properly. No third-party apps needed.</p>
+        <a href="tutorial-clean-temp.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
+      </div>
+      <div class="card article-card extra-tutorial" style="display:none;">
+        <h4><i class="fa-solid fa-gauge-high" style="color: var(--brown);"></i> Stop Laptop Overheating: Limit CPU to 99%</h4>
+        <p>Power Options trick that drops temps 15°C instantly without losing performance. Works on all Windows laptops.</p>
+        <a href="tutorial-cpu99.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
+      </div>
+      <div class="card article-card extra-tutorial" style="display:none;">
+        <h4><i class="fa-solid fa-shield-halved" style="color: var(--blue);"></i> Speed Up Slow Wi-Fi: Change DNS in 30 Seconds</h4>
+        <p>Switch to Cloudflare 1.1.1.1 or Google DNS. Fixes lag, improves gaming ping, no VPN needed.</p>
+        <a href="tutorial-dns.html" target="_blank" class="btn-outline btn"><i class="fa-solid fa-arrow-up-right-from-square"></i> Full Steps</a>
+      </div>
+    </div>
+    <div class="view-all-btn">
+      <button id="seeMoreTutorials" class="btn btn-outline" style="padding: 14px 28px;"><i class="fa-solid fa-plus"></i> See More Tutorials</button>
     </div>
   </div>
 </section>
@@ -272,7 +294,7 @@
       <div class="footer-col">
         <h4>Follow</h4>
         <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank"><i class="fa-brands fa-pinterest"></i> Pinterest</a>
-        <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        <a href="https://www.youtube.com/@dedefajarulakbar" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
         <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
       </div>
     </div>
@@ -284,6 +306,18 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // See More Tutorials toggle
+  document.getElementById('seeMoreTutorials')?.addEventListener('click', function() {
+    const extras = document.querySelectorAll('.extra-tutorial');
+    const isHidden = extras[0].style.display === 'none';
+    extras.forEach(el => el.style.display = isHidden ? 'block' : 'none');
+    this.innerHTML = isHidden 
+      ? '<i class="fa-solid fa-minus"></i> Show Less' 
+      : '<i class="fa-solid fa-plus"></i> See More Tutorials';
+  });
+</script>
 
 </body>
 </html>
