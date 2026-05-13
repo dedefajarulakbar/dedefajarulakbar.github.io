@@ -1,24 +1,204 @@
-
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Check Internet Speed - Dede's Picks</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix High Ping & Packet Loss for Gaming: 7 Proven Steps | Dede's Picks</title>
+<meta name="description" content="Stop lag in Valorant, PUBG, and Mobile Legends. Lower your ping from 200ms to 40ms with these 7 network fixes for Wi-Fi and wired connections.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>:root{--cream:#faf6f0;--cream2:#f3ebe0;--brown:#7a5230;--brown-dk:#3d2010;--text:#2e1f0f;--text-mid:#6b5040;--border:rgba(122,82,48,0.15);--radius:12px}body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;margin:0}.container{max-width:800px;margin:0 auto;padding:40px 24px}h1{font-family:'Playfair Display',serif;font-size:36px;color:var(--brown-dk);margin-bottom:20px}h3{font-size:20px;color:var(--brown);margin:24px 0 12px}ol{padding-left:20px}li{margin-bottom:12px;color:var(--text-mid)}code{background:var(--cream2);padding:2px 6px;border-radius:4px}.btn{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--brown);border:1.5px solid var(--brown);padding:12px 20px;border-radius:8px;font-weight:500;text-decoration:none;margin-bottom:30px}.btn:hover{background:var(--brown);color:#fff}</style>
-</head><body><div class="container">
-<a href="https://dedefajarulakbar.github.io/" class="btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
-<h1><i class="fa-solid fa-gauge-high"></i> How to Check Internet Speed: Ping Google</h1>
-<p>Ping test shows how fast your computer talks to Google's server. Lower = better for gaming, Zoom, Netflix.</p>
-<h3><i class="fa-brands fa-windows"></i> Step-by-Step Windows:</h3>
-<ol><li>Press <code>Windows + R</code> on your keyboard. A "Run" box appears.</li>
-<li>Type <code>cmd</code> and press Enter. Black window called "Command Prompt" opens.</li>
-<li>Type <code>ping google.com -t</code> and press Enter. Don't close the window.</li>
-<li>Look at "time=XXms" on each line. This is your ping.</li>
-<li>Press <code>Ctrl + C</code> to stop the test.</li></ol>
-<h3><i class="fa-solid fa-chart-simple"></i> How to Read Results:</h3>
-<p><strong>0-50ms:</strong> Excellent. Perfect for gaming & video calls.<br>
-<strong>50-100ms:</strong> Good. Normal browsing is fine.<br>
-<strong>100-150ms:</strong> Okay. Might lag in games.<br>
-<strong>150ms+:</strong> Slow. Call your internet provider.</p>
-<h3><i class="fa-brands fa-apple"></i> Mac Users:</h3>
-<p>Open "Terminal" → type <code>ping google.com</code> → Enter. Same results.</p>
-</div></body></html>
+<style>
+  :root { --cream: #faf6f0; --cream2: #f3ebe0; --cream3: #ece0d0; --brown: #7a5230; --brown-lt: #a07855; --brown-dk: #3d2010; --text: #2e1f0f; --text-mid: #6b5040; --green: #4a7c4a; --red: #c0392b; --white: #ffffff; --border: rgba(122,82,48,0.15); --shadow: 0 2px 16px rgba(61,32,16,0.08); --radius: 12px; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+  header { background: var(--white); border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--brown); font-weight: 600; text-decoration: none; }
+  .logo i { margin-right: 8px; color: var(--green); }
+  article { background: var(--white); border-radius: var(--radius); padding: 40px; margin: 40px 0; box-shadow: var(--shadow); }
+  h1 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--brown-dk); margin-bottom: 16px; line-height: 1.3; }
+  .meta { color: var(--text-mid); font-size: 14px; margin-bottom: 24px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .meta i { margin-right: 6px; }
+  h2 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--brown); margin: 32px 0 16px; }
+  h3 { font-size: 18px; color: var(--brown-dk); margin: 24px 0 12px; }
+  p, li { color: var(--text-mid); margin-bottom: 16px; }
+  ul, ol { padding-left: 24px; margin-bottom: 16px; }
+  code { background: var(--cream3); padding: 2px 6px; border-radius: 4px; font-size: 15px; color: var(--brown-dk); font-family: monospace; }
+  .warning { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 16px; border-radius: 8px; margin: 24px 0; }
+  .warning strong { color: #c53030; }
+  .tip { background: #f0fff4; border-left: 4px solid #38a169; padding: 16px; border-radius: 8px; margin: 24px 0; }
+  .tip strong { color: #2f855a; }
+  .btn-back { display: inline-flex; align-items: center; gap: 8px; background: var(--brown); color: var(--white); padding: 12px 20px; border-radius: 8px; font-weight: 500; margin-top: 32px; text-decoration: none; transition: 0.2s; }
+  .btn-back:hover { background: var(--brown-dk); }
+  
+  .engagement-box { background: var(--cream2); border-radius: var(--radius); padding: 28px; margin: 40px 0 24px; text-align: center; border: 1px dashed var(--brown-lt); }
+  .engagement-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--brown-dk); margin: 0 0 8px; }
+  .engagement-box p { font-size: 14px; color: var(--text-mid); margin-bottom: 20px; }
+  .reactions { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; }
+  .reaction-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .reaction-btn { background: var(--white); border: 2px solid var(--border); border-radius: 50px; width: 64px; height: 64px; font-size: 28px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; position: relative; }
+  .reaction-btn:hover { transform: translateY(-3px); border-color: var(--brown-lt); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+  .reaction-btn.active { background: var(--brown); border-color: var(--brown); transform: scale(1.1); }
+  .reaction-label { font-size: 12px; color: var(--text-mid); font-weight: 500; }
+  .reaction-btn.active + .reaction-label { color: var(--brown-dk); font-weight: 600; }
+  .plus-one { position: absolute; top: -10px; right: -5px; background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 2px 6px; border-radius: 10px; opacity: 0; transform: translateY(10px); pointer-events: none; }
+  .plus-one.animate { animation: popUp 0.8s ease-out forwards; }
+  @keyframes popUp { 0% { opacity: 0; transform: translateY(10px) scale(0.8); } 20% { opacity: 1; transform: translateY(-5px) scale(1.2); } 100% { opacity: 0; transform: translateY(-30px) scale(0.9); } }
+  .social-cta { display: none; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .social-cta.show { display: block; animation: fadeIn 0.4s; }
+  .social-cta p { font-weight: 500; color: var(--brown-dk); margin-bottom: 16px; }
+  .social-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-social { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-weight: 500; text-decoration: none; transition: 0.2s; font-size: 14px; }
+  .btn-yt { background: var(--red); color: white; }
+  .btn-yt:hover { background: #a93226; transform: translateY(-2px); }
+  .btn-pin { background: var(--brown); color: white; }
+  .btn-pin:hover { background: var(--brown-dk); transform: translateY(-2px); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  footer { text-align: center; padding: 40px 0; font-size: 14px; color: var(--text-mid); }
+  @media (max-width: 600px) { h1 { font-size: 28px; } article { padding: 24px; } .reactions { gap: 16px; } .reaction-btn { width: 56px; height: 56px; font-size: 24px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <a href="index.html" class="logo"><i class="fa-solid fa-leaf"></i>Dede's Picks</a>
+  </div>
+</header>
+
+<div class="container">
+  <article>
+    <h1>Fix High Ping & Packet Loss for Gaming: 7 Proven Steps</h1>
+    <div class="meta">
+      <span><i class="fa-solid fa-calendar"></i> Last Updated: May 14, 2026</span>
+      <span><i class="fa-solid fa-clock"></i> 5 Min Read</span>
+      <span><i class="fa-solid fa-wifi"></i> Gaming Network</span>
+    </div>
+
+    <p>High ping is not always your ISP's fault. Most lag comes from bad Wi-Fi, background downloads, and wrong DNS settings. I dropped my Valorant ping from 180ms to 38ms in Aceh using these exact steps — no VPN needed.</p>
+
+    <h2>1. Use Ethernet, Not Wi-Fi</h2>
+    <p>Wi-Fi adds 15-40ms of jitter. A $10 CAT6 cable gives you stable ping instantly. If you must use Wi-Fi, use 5GHz band and sit within 3 meters of the router.</p>
+
+    <h2>2. Change DNS to Cloudflare or Google</h2>
+    <p>Your ISP DNS is slow. Switch to faster DNS to reduce initial connection time.</p>
+    <ol>
+      <li>Windows: Settings → Network → Change adapter options → Right-click Wi-Fi/Ethernet → Properties</li>
+      <li>Select IPv4 → Properties → Use: <code>1.1.1.1</code> and <code>1.0.0.1</code> (Cloudflare)</li>
+      <li>Or use Google: <code>8.8.8.8</code> and <code>8.8.4.4</code></li>
+    </ol>
+
+    <h2>3. Close Background Bandwidth Hogs</h2>
+    <p>Press <code>Ctrl+Shift+Esc</code> → Performance → Open Resource Monitor → Network. Kill:</p>
+    <ul>
+      <li>Windows Update</li>
+      <li>Steam/Epic downloads</li>
+      <li>OneDrive, Google Drive sync</li>
+      <li>Chrome/YouTube streaming on other devices</li>
+    </ul>
+
+    <div class="tip">
+      <strong>My Rule:</strong> Before ranked game, I run <code>netsh interface ip show config</code> in CMD to check if anything is downloading. Saves me from 200ms spikes.
+    </div>
+
+    <h2>4. Set Your Game to High Priority</h2>
+    <ol>
+      <li>Launch game</li>
+      <li>Alt+Tab → Task Manager → Details</li>
+      <li>Right-click game.exe → Set priority → High</li>
+      <li>Do same for anti-cheat (vgc.exe, etc)</li>
+    </ol>
+
+    <h2>5. Use Ping Test to Find Best Server</h2>
+    <p>Don't auto-select. Test manually in CMD:</p>
+    <p><code>ping sg.valorant.com -t</code> (Singapore)<br>
+    <code>ping 103.28.54.1 -t</code> (Mumbai)</p>
+    <p>Pick server with lowest stable ms, not lowest average. Stable 50ms beats jumping 30-90ms.</p>
+
+    <h2>6. Restart Router the Right Way</h2>
+    <p>Unplug router 30 seconds, not 5. This clears ISP cache and gets new IP route. Do this once a week. I do every Sunday night.</p>
+
+    <h2>7. Limit Other Devices (QoS)</h2>
+    <p>Login to router (192.168.1.1) → Find QoS or Bandwidth Control → Set your PC/phone MAC address to High priority. This stops family Netflix from killing your ping.</p>
+
+    <div class="warning">
+      <strong>Avoid VPNs for Gaming:</strong> VPNs add 20-50ms unless your ISP routing is broken. Test ping with and without VPN. In Indonesia, VPN usually makes it worse.
+    </div>
+
+    <h2>What Ping Should You Expect?</h2>
+    <ul>
+      <li>Java/Sumatra to Singapore: 30-50ms (good)</li>
+      <li>To Japan: 80-110ms (playable)</li>
+      <li>Over 150ms: fix your network first</li>
+    </ul>
+
+    <div class="engagement-box" id="engage">
+      <h3>Did this guide help you?</h3>
+      <p>Tap an emoji — it helps me make better tutorials</p>
+      <div class="reactions">
+        <div class="reaction-item">
+          <button class="reaction-btn" data-reaction="helpful">👍<span class="plus-one">+1</span></button>
+          <span class="reaction-label">Helpful</span>
+        </div>
+        <div class="reaction-item">
+          <button class="reaction-btn" data-reaction="love">❤️<span class="plus-one">+1</span></button>
+          <span class="reaction-label">Loved it</span>
+        </div>
+        <div class="reaction-item">
+          <button class="reaction-btn" data-reaction="confused">🤔<span class="plus-one">+1</span></button>
+          <span class="reaction-label">Confusing</span>
+        </div>
+      </div>
+      <div class="social-cta" id="socialCta">
+        <p>Thanks! Want more quick fixes like this?</p>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/@dedefajarulakbar" target="_blank" class="btn-social btn-yt"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+          <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank" class="btn-social btn-pin"><i class="fa-brands fa-pinterest"></i> Save on Pinterest</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html#tutorials" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to All Tutorials</a>
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Dede's Picks · Built with care</p>
+    <p style="font-size: 12px; margin-top: 8px;">As an Amazon Associate I earn from qualifying purchases.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.reaction-btn');
+  const socialCta = document.getElementById('socialCta');
+  const pageId = 'tutorial-ping';
+  
+  const saved = localStorage.getItem('reaction-' + pageId);
+  if (saved) {
+    document.querySelector(`[data-reaction="${saved}"]`).classList.add('active');
+    socialCta.classList.add('show');
+  }
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const reaction = this.dataset.reaction;
+      const plusOne = this.querySelector('.plus-one');
+      
+      buttons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      plusOne.classList.remove('animate');
+      void plusOne.offsetWidth;
+      plusOne.classList.add('animate');
+      
+      localStorage.setItem('reaction-' + pageId, reaction);
+      socialCta.classList.add('show');
+    });
+  });
+});
+</script>
+</body>
+</html>
