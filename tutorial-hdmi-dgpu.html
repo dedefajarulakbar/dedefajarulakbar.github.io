@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +31,33 @@
   .tip strong { color: #2f855a; }
   .btn-back { display: inline-flex; align-items: center; gap: 8px; background: var(--brown); color: var(--white); padding: 12px 20px; border-radius: 8px; font-weight: 500; margin-top: 32px; text-decoration: none; transition: 0.2s; }
   .btn-back:hover { background: var(--brown-dk); }
+  
+  .engagement-box { background: var(--cream2); border-radius: var(--radius); padding: 28px; margin: 40px 0 24px; text-align: center; border: 1px dashed var(--brown-lt); }
+  .engagement-box h3 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--brown-dk); margin: 0 0 8px; }
+  .engagement-box p { font-size: 14px; color: var(--text-mid); margin-bottom: 20px; }
+  .reactions { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; }
+  .reaction-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .reaction-btn { background: var(--white); border: 2px solid var(--border); border-radius: 50px; width: 64px; height: 64px; font-size: 28px; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; position: relative; }
+  .reaction-btn:hover { transform: translateY(-3px); border-color: var(--brown-lt); box-shadow: 0 6px 16px rgba(0,0,0,0.1); }
+  .reaction-btn.active { background: var(--brown); border-color: var(--brown); transform: scale(1.1); }
+  .reaction-label { font-size: 12px; color: var(--text-mid); font-weight: 500; }
+  .reaction-btn.active + .reaction-label { color: var(--brown-dk); font-weight: 600; }
+  .plus-one { position: absolute; top: -10px; right: -5px; background: var(--green); color: white; font-size: 12px; font-weight: 700; padding: 2px 6px; border-radius: 10px; opacity: 0; transform: translateY(10px); pointer-events: none; }
+  .plus-one.animate { animation: popUp 0.8s ease-out forwards; }
+  @keyframes popUp { 0% { opacity: 0; transform: translateY(10px) scale(0.8); } 20% { opacity: 1; transform: translateY(-5px) scale(1.2); } 100% { opacity: 0; transform: translateY(-30px) scale(0.9); } }
+  .social-cta { display: none; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .social-cta.show { display: block; animation: fadeIn 0.4s; }
+  .social-cta p { font-weight: 500; color: var(--brown-dk); margin-bottom: 16px; }
+  .social-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-social { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 8px; font-weight: 500; text-decoration: none; transition: 0.2s; font-size: 14px; }
+  .btn-yt { background: var(--red); color: white; }
+  .btn-yt:hover { background: #a93226; transform: translateY(-2px); }
+  .btn-pin { background: var(--brown); color: white; }
+  .btn-pin:hover { background: var(--brown-dk); transform: translateY(-2px); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
   footer { text-align: center; padding: 40px 0; font-size: 14px; color: var(--text-mid); }
-  @media (max-width: 600px) { h1 { font-size: 28px; } article { padding: 24px; } }
+  @media (max-width: 600px) { h1 { font-size: 28px; } article { padding: 24px; } .reactions { gap: 16px; } .reaction-btn { width: 56px; height: 56px; font-size: 24px; } }
 </style>
 </head>
 <body>
@@ -115,6 +139,32 @@
     <h3>My laptop screen goes black after BIOS change</h3>
     <p>Some older laptops route the built-in screen through the iGPU only. If this happens, go back to BIOS and switch to "Hybrid" mode. Use Method 1 or 2 instead. The BIOS method is only for newer gaming laptops with a MUX switch.</p>
 
+    <div class="engagement-box" id="engage">
+      <h3>Did this guide help you?</h3>
+      <p>Tap an emoji — it helps me make better tutorials</p>
+      <div class="reactions">
+        <div class="reaction-item">
+          <button class="reaction-btn" data-reaction="helpful">👍<span class="plus-one">+1</span></button>
+          <span class="reaction-label">Helpful</span>
+        </div>
+        <div class="reaction-item">
+          <button class="reaction-btn" data-reaction="love">❤️<span class="plus-one">+1</span></button>
+          <span class="reaction-label">Loved it</span>
+        </div>
+        <div class="reaction-item">
+          <button class="reaction-btn" data-reaction="confused">🤔<span class="plus-one">+1</span></button>
+          <span class="reaction-label">Confusing</span>
+        </div>
+      </div>
+      <div class="social-cta" id="socialCta">
+        <p>Thanks! Want more quick fixes like this?</p>
+        <div class="social-buttons">
+          <a href="https://www.youtube.com/@dedefajarulakbar" target="_blank" class="btn-social btn-yt"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+          <a href="https://id.pinterest.com/dedefajarulakbar/" target="_blank" class="btn-social btn-pin"><i class="fa-brands fa-pinterest"></i> Save on Pinterest</a>
+        </div>
+      </div>
+    </div>
+
     <a href="index.html#tutorials" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Back to All Tutorials</a>
   </article>
 </div>
@@ -125,5 +175,36 @@
     <p style="font-size: 12px; margin-top: 8px;">As an Amazon Associate I earn from qualifying purchases.</p>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.reaction-btn');
+  const socialCta = document.getElementById('socialCta');
+  const pageId = 'tutorial-hdmi-dgpu';
+  
+  const saved = localStorage.getItem('reaction-' + pageId);
+  if (saved) {
+    document.querySelector(`[data-reaction="${saved}"]`).classList.add('active');
+    socialCta.classList.add('show');
+  }
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const reaction = this.dataset.reaction;
+      const plusOne = this.querySelector('.plus-one');
+      
+      buttons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      plusOne.classList.remove('animate');
+      void plusOne.offsetWidth;
+      plusOne.classList.add('animate');
+      
+      localStorage.setItem('reaction-' + pageId, reaction);
+      socialCta.classList.add('show');
+    });
+  });
+});
+</script>
 </body>
 </html>
