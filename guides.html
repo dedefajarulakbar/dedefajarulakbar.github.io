@@ -1,1 +1,325 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buying Guides - Dede's Picks</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #faf6f0;
+            --brown: #7a5230;
+            --brown-dark: #5c3e24;
+            --text: #2f261c;
+            --muted: #6f5f4f;
+            --white: #ffffff;
+            --border: rgba(122, 82, 48, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(250, 246, 240, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 22px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--brown);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        main {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 72px 24px 100px;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 64px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brown);
+            background: rgba(122, 82, 48, 0.08);
+            padding: 6px 14px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(38px, 6vw, 56px);
+            line-height: 1.1;
+            color: var(--brown);
+            margin-bottom: 16px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 960px) {
+            .guides-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            main {
+                padding: 56px 24px 80px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero {
+                margin-bottom: 48px;
+            }
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 32px 30px 28px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(122, 82, 48, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brown), #a67c52);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(122, 82, 48, 0.12);
+            border-color: rgba(122, 82, 48, 0.2);
+        }
+
+        .article-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-category {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--brown);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .article-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            line-height: 1.3;
+            color: var(--brown-dark);
+            margin-bottom: 14px;
+            font-weight: 600;
+        }
+
+        .article-card p {
+            font-size: 15px;
+            color: #5b4e40;
+            margin-bottom: 26px;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            background: var(--cream);
+            color: var(--brown);
+            border: 1.5px solid rgba(122, 82, 48, 0.2);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: var(--brown);
+            color: white;
+            border-color: var(--brown);
+            transform: translateY(-1px);
+        }
+
+        .btn svg {
+            width: 14px;
+            height: 14px;
+            opacity: 0.7;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover svg {
+            transform: translateX(2px);
+            opacity: 1;
+        }
+
+        .status {
+            font-size: 12px;
+            color: #9a8573;
+            font-weight: 500;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            color: #8a7764;
+            font-size: 14px;
+        }
+
+        .footer-inner p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">Dede's Picks</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <span class="eyebrow">Buying Guides</span>
+            <h1>Buying Guides</h1>
+            <p>Not sure what to buy? These guides compare top options so you can choose fast.</p>
+        </div>
+
+        <div class="guides-grid">
+            <article class="article-card">
+                <div class="card-category">Baby Care</div>
+                <h3>WaterWipes vs Huggies: Which Wipe Wins for Sensitive Skin?</h3>
+                <p>We tested absorption, thickness, ingredients, and price per wipe over 30 days. Here's the honest breakdown...</p>
+                <div class="card-footer">
+                    <a href="#" class="btn">
+                        Coming Soon
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <span class="status">Guide</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="card-category">Budget Finds</div>
+                <h3>5 Baby Essentials Under $25 on Amazon Right Now</h3>
+                <p>Skip the overpriced baby brand markup. These hospital-recommended items cost less and work better...</p>
+                <div class="card-footer">
+                    <a href="#" class="btn">
+                        Coming Soon
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <span class="status">Guide</span>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="card-category">Home</div>
+                <h3>Scrub Daddy vs Scrub Mommy: Do You Need Both?</h3>
+                <p>Texture, durability, and smell test after 60 days of dish duty. The results surprised us...</p>
+                <div class="card-footer">
+                    <a href="#" class="btn">
+                        Coming Soon
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <span class="status">Guide</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <p>&copy; 2026 Dede's Picks</p>
+        </div>
+    </footer>
+</body>
+</html>
